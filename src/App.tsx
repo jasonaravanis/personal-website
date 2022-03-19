@@ -2,6 +2,7 @@ import { NavBar } from "./components/NavBar";
 import { useTheme } from "./contexts/Theme";
 import styled from "styled-components";
 import colours from "./styles/colours";
+import "./styles/fonts.css";
 import Main from "./components/Main";
 
 interface InterfaceAppStyles {
