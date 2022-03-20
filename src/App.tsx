@@ -9,7 +9,6 @@ import DarkMode from "./interfaces/DarkMode";
 import screens from "./styles/screens";
 
 const AppStyles = styled.div<DarkMode>`
-  min-width: ${screens.minimum};
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,9 +22,7 @@ const AppStyles = styled.div<DarkMode>`
 const ScreenContainer = styled.main`
   width: 100vw;
   max-width: ${screens.xl};
-  @media screen and (min-width: ${screens.sm}) {
-    width: 80vw;
-  }
+  min-width: ${screens.minimum};
 `;
 
 function App() {
@@ -34,6 +31,9 @@ function App() {
     <AppStyles darkMode={darkMode}>
       <ScreenContainer>
         <NavBar />
+        <Home />
+        <Home />
+        <Home />
         <Home />
       </ScreenContainer>
     </AppStyles>

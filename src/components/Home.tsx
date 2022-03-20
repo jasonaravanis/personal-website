@@ -33,6 +33,11 @@ const PrimaryTitle = styled.span`
 
   @media screen and (min-width: ${screens.md}) {
     align-items: flex-start;
+    font-size: 7rem;
+  }
+
+  @media screen and (min-width: ${screens.lg}) {
+    align-items: flex-start;
     font-size: 10rem;
   }
 `;
@@ -43,15 +48,21 @@ const Subtitle = styled.span`
   font-family: "Raleway";
   font-size: 2rem;
   color: ${colours.light.primary};
+
   @media screen and (min-width: ${screens.md}) {
+    align-items: flex-start;
+    font-size: 2.5rem;
+  }
+
+  @media screen and (min-width: ${screens.lg}) {
     align-items: flex-start;
     font-size: 3rem;
   }
 `;
 
 const ProfessionalPhoto = styled.img`
-  margin: 1rem;
-  width: 10rem;
+  margin: 2rem;
+  width: 15rem;
   border-radius: 20px;
 
   @media screen and (min-width: ${screens.md}) {

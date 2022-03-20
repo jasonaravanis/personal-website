@@ -5,16 +5,21 @@ import BurgerToggle from "./BurgerToggle";
 import screens from "../styles/screens";
 import { useState } from "react";
 import DarkModeToggle from "./DarkModeSwitch";
+import colours from "../styles/colours";
 
 interface LinkWrapperInterface {
   open: boolean;
 }
 
 const Header = styled.header<DarkMode>`
+  z-index: 10;
+  position: sticky;
+  top: 0px;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-
+  background-color: ${(props) =>
+    props.darkMode ? colours.dark.background : colours.light.background};
   @media screen and (min-width: ${screens.sm}) {
     flex-direction: row;
   }
