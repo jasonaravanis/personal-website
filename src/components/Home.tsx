@@ -3,19 +3,21 @@ import screens from "../styles/screens";
 import professional from "../images/professional.png";
 import colours from "../styles/colours";
 
-const StyledMain = styled.div`
+const StyledHome = styled.section`
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
   font-family: "Zeyada";
+
+  @media screen and (min-width: ${screens.md}) {
+    flex-direction: row;
+  }
 `;
 
 const TitleContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 1rem;
 `;
 
 const PrimaryTitle = styled.span`
@@ -72,7 +74,7 @@ const ProfessionalPhoto = styled.img`
 
 const Home = () => {
   return (
-    <StyledMain>
+    <StyledHome>
       <TitleContainer>
         <PrimaryTitle>
           <span>Jason</span>
@@ -81,7 +83,7 @@ const Home = () => {
         <Subtitle>Full Stack Developer</Subtitle>
       </TitleContainer>
       <ProfessionalPhoto src={professional} alt="Professional headshot" />
-    </StyledMain>
+    </StyledHome>
   );
 };
 

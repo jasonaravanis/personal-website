@@ -4,6 +4,7 @@ import styled from "styled-components";
 import colours from "./styles/colours";
 import "./styles/fonts.css";
 import Home from "./components/Home";
+import About from "./components/About";
 import ColoursDemo from "./components/ColoursDemo";
 import DarkMode from "./interfaces/DarkMode";
 import screens from "./styles/screens";
@@ -21,8 +22,12 @@ const AppStyles = styled.div<DarkMode>`
 
 const ScreenContainer = styled.main`
   width: 100vw;
-  max-width: ${screens.xl};
+  max-width: ${screens.lg};
   min-width: ${screens.minimum};
+
+  @media screen and (min-width: ${screens.md}) {
+    width: 90vw;
+  }
 `;
 
 function App() {
@@ -32,9 +37,7 @@ function App() {
       <ScreenContainer>
         <NavBar />
         <Home />
-        <Home />
-        <Home />
-        <Home />
+        <About />
       </ScreenContainer>
     </AppStyles>
   );
