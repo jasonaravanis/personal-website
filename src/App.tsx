@@ -5,16 +5,14 @@ import colours from "./styles/colours";
 import "./styles/fonts.css";
 import Main from "./components/Main";
 import ColoursDemo from "./components/ColoursDemo";
+import DarkMode from "./interfaces/DarkMode";
 
-interface InterfaceAppStyles {
-  darkMode: boolean;
-}
-
-const AppStyles = styled.div<InterfaceAppStyles>`
+const AppStyles = styled.div<DarkMode>`
   color: ${(props) =>
     props.darkMode ? colours.dark.secondary : colours.light.secondary};
   background: ${(props) =>
     props.darkMode ? colours.dark.background : colours.light.background};
+  font-family: "Raleway";
 `;
 
 function App() {
@@ -23,7 +21,7 @@ function App() {
     <AppStyles darkMode={darkMode}>
       <NavBar />
       {/* <Main /> */}
-      <ColoursDemo />
+      {/* <ColoursDemo /> */}
     </AppStyles>
   );
 }

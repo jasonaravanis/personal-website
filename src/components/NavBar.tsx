@@ -1,21 +1,85 @@
-import { useThemeUpdate } from "../contexts/Theme";
+import { useTheme, useThemeUpdate } from "../contexts/Theme";
 import styled from "styled-components";
+import DarkMode from "../interfaces/DarkMode";
+import BurgerToggle from "./BurgerToggle";
+import screens from "../styles/screens";
+import { useState } from "react";
 
-interface IWrp {}
+interface LinkWrapperInterface {
+  open: boolean;
+}
 
-const Wrapper = styled.header<IWrp>`
-  font-family: "Raleway";
-  font-weight: 700;
-  font-size: 5rem;
+const Header = styled.header<DarkMode>`
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+
+  @media screen and (min-width: ${screens.sm}) {
+    flex-direction: row;
+  }
+`;
+
+const FlexWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+const Nav = styled.nav<LinkWrapperInterface>`
+  display: ${(props) => (props.open ? "flex" : "none")};
+  align-items: center;
+  justify-content: center;
+
+  @media screen and (min-width: ${screens.sm}) {
+    display: flex;
+    justify-content: end;
+  }
+`;
+
+const LinkWrapper = styled.ul`
+  display: flex;
+  flex-direction: column;
+
+  @media screen and (min-width: ${screens.sm}) {
+    flex-direction: row;
+  }
+`;
+
+const Link = styled.a`
+  display: flex;
+  margin: 0.5rem;
+  &:hover {
+    /* TODO: Add hover colouration based on light/dark mode */
+  }
+  @media screen and (min-width: ${screens.sm}) {
+    margin: 1rem;
+  }
 `;
 
 export function NavBar() {
+  const darkMode = useTheme();
   const toggleTheme = useThemeUpdate();
+  const [navOpen, setNavOpen] = useState(false);
+
+  const toggleNav = () => {
+    setNavOpen(!navOpen);
+  };
 
   return (
-    <Wrapper>
-      <nav>Some Content Goes Here</nav>
-      <button onClick={toggleTheme}>Toggle Theme</button>
-    </Wrapper>
+    <Header darkMode={darkMode}>
+      <FlexWrapper>
+        <button onClick={toggleTheme}>Toggle Theme</button>
+        <BurgerToggle toggle={toggleNav} />
+      </FlexWrapper>
+
+      <Nav open={navOpen}>
+        <LinkWrapper>
+          <Link>Home</Link>
+          <Link href="#about">About</Link>
+          <Link href="#skills">Skills</Link>
+          <Link href="#projects">Projects</Link>
+          <Link href="#contact">Contact</Link>
+        </LinkWrapper>
+      </Nav>
+    </Header>
   );
 }
