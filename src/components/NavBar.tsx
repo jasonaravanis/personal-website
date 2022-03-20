@@ -1,9 +1,10 @@
-import { useTheme, useThemeUpdate } from "../contexts/Theme";
+import { useTheme } from "../contexts/Theme";
 import styled from "styled-components";
 import DarkMode from "../interfaces/DarkMode";
 import BurgerToggle from "./BurgerToggle";
 import screens from "../styles/screens";
 import { useState } from "react";
+import DarkModeToggle from "./DarkModeSwitch";
 
 interface LinkWrapperInterface {
   open: boolean;
@@ -57,7 +58,6 @@ const Link = styled.a`
 
 export function NavBar() {
   const darkMode = useTheme();
-  const toggleTheme = useThemeUpdate();
   const [navOpen, setNavOpen] = useState(false);
 
   const toggleNav = () => {
@@ -67,13 +67,13 @@ export function NavBar() {
   return (
     <Header darkMode={darkMode}>
       <FlexWrapper>
-        <button onClick={toggleTheme}>Toggle Theme</button>
+        <DarkModeToggle />
         <BurgerToggle toggle={toggleNav} />
       </FlexWrapper>
 
       <Nav open={navOpen}>
         <LinkWrapper>
-          <Link>Home</Link>
+          <Link href="#home">Home</Link>
           <Link href="#about">About</Link>
           <Link href="#skills">Skills</Link>
           <Link href="#projects">Projects</Link>
