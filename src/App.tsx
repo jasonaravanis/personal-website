@@ -38,6 +38,7 @@ const ContentContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 3rem;
 
   @media screen and (min-width: ${screens.md}) {
     width: 100%;

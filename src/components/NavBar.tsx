@@ -12,9 +12,9 @@ interface LinkWrapperInterface {
 }
 
 const Header = styled.header<DarkMode>`
-  width: 100%;
+  width: inherit;
   z-index: 10;
-  position: sticky;
+  position: fixed;
   top: 0px;
   display: flex;
   justify-content: space-between;
