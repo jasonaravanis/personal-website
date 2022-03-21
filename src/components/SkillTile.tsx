@@ -19,12 +19,11 @@ const Container = styled.a`
 
 const Tile = styled.div`
   position: relative;
-  display: grid;
-  place-items: center;
+  /* display: grid; */
+  /* place-items: center; */
   aspect-ratio: 1/ 1;
-  background-color: blue;
-  border-radius: 10px;
   background-color: white;
+  border-radius: 10px;
   overflow: hidden;
   cursor: pointer;
   -webkit-box-shadow: 0px 0px 13px -5px #7d7d7d;
@@ -37,6 +36,10 @@ const Tile = styled.div`
 `;
 
 const Image = styled.img`
+  object-fit: contain;
+  object-position: center;
+  height: 100%;
+  width: 100%;
   padding: 0.5rem;
   @media screen and (min-width: ${screens.md}) {
     padding: 0.75rem;
@@ -70,6 +73,7 @@ const MobileTitle = styled.span`
   width: 100%;
   display: none;
   text-align: center;
+  font-size: 0.8rem;
   margin-top: 0.5rem;
   @media (pointer: coarse) {
     display: inline-block;

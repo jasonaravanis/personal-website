@@ -11,6 +11,10 @@ import FramerMotionLogo from "../images/icons/framerMotion.png";
 import ReactSpringLogo from "../images/icons/reactSpring.png";
 import NodeLogo from "../images/icons/nodejs.png";
 import ExpressLogo from "../images/icons/express.png";
+import MongoLogo from "../images/icons/mongodb.png";
+import MongooseLogo from "../images/icons/mongoose.png";
+import PassportLogo from "../images/icons/passportjs.png";
+import FirebaseLogo from "../images/icons/firebase.png";
 
 const StyledSection = styled.section`
   width: 100%;
@@ -81,6 +85,26 @@ const Skills = () => {
             link="https://expressjs.com"
             img={ExpressLogo}
             title="express"
+          />
+          <SkillTile
+            link="https://www.mongodb.com"
+            img={MongoLogo}
+            title="mongoDB"
+          />
+          <SkillTile
+            link="https://mongoosejs.com"
+            img={MongooseLogo}
+            title="mongoose"
+          />
+          <SkillTile
+            link="https://www.passportjs.org"
+            img={PassportLogo}
+            title="passportjs"
+          />
+          <SkillTile
+            link="https://firebase.google.com"
+            img={FirebaseLogo}
+            title="firebase"
           />
         </SkillGrid>
       </SkillSection>
