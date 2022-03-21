@@ -15,6 +15,12 @@ import MongoLogo from "../images/icons/mongodb.png";
 import MongooseLogo from "../images/icons/mongoose.png";
 import PassportLogo from "../images/icons/passportjs.png";
 import FirebaseLogo from "../images/icons/firebase.png";
+import GitLogo from "../images/icons/git.png";
+import NpmLogo from "../images/icons/npm.png";
+import WebpackLogo from "../images/icons/webpack.png";
+import HerokuLogo from "../images/icons/heroku.png";
+import GitHubLogo from "../images/icons/github.png";
+import JestLogo from "../images/icons/jest.png";
 
 const StyledSection = styled.section`
   width: 100%;
@@ -106,6 +112,29 @@ const Skills = () => {
             img={FirebaseLogo}
             title="firebase"
           />
+        </SkillGrid>
+      </SkillSection>
+      <SkillSection>
+        <SectionSubTitle>other</SectionSubTitle>
+        <SkillGrid>
+          <SkillTile link="https://git-scm.com" img={GitLogo} title="git" />
+          <SkillTile link="https://www.npmjs.com" img={NpmLogo} title="npm" />
+          <SkillTile
+            link="https://webpack.js.org"
+            img={WebpackLogo}
+            title="webpack"
+          />
+          <SkillTile
+            link="https://www.heroku.com"
+            img={HerokuLogo}
+            title="heroku"
+          />
+          <SkillTile
+            link="https://github.com"
+            img={GitHubLogo}
+            title="GitHub"
+          />
+          <SkillTile link="https://jestjs.io" img={JestLogo} title="jest" />
         </SkillGrid>
       </SkillSection>
     </StyledSection>
