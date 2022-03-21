@@ -9,6 +9,7 @@ import Skills from "./components/Skills";
 import ColoursDemo from "./components/ColoursDemo";
 import DarkMode from "./interfaces/DarkMode";
 import screens from "./styles/screens";
+import Projects from "./components/Projects";
 
 const AppStyles = styled.div<DarkMode>`
   display: flex;
@@ -56,7 +57,7 @@ function App() {
           <Home />
           <About />
           <Skills />
-          <About />
+          <Projects />
           <About />
         </ContentContainer>
       </ScreenContainer>

@@ -46,7 +46,7 @@ const Image = styled.img`
   }
 `;
 
-const HoverTitle = styled.div<DarkMode>`
+const HoverTitle = styled.span<DarkMode>`
   position: absolute;
   width: 100%;
   height: 100%;
