@@ -5,6 +5,7 @@ import colours from "./styles/colours";
 import "./styles/fonts.css";
 import Home from "./components/Home";
 import About from "./components/About";
+import Skills from "./components/Skills";
 import ColoursDemo from "./components/ColoursDemo";
 import DarkMode from "./interfaces/DarkMode";
 import screens from "./styles/screens";
@@ -54,7 +55,7 @@ function App() {
         <ContentContainer>
           <Home />
           <About />
-          <About />
+          <Skills />
           <About />
           <About />
         </ContentContainer>

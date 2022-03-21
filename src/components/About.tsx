@@ -3,12 +3,9 @@ import colours from "../styles/colours";
 import DarkMode from "../interfaces/DarkMode";
 import { useTheme } from "../contexts/Theme";
 import screens from "../styles/screens";
+import { SectionTitle } from "./SectionTitle";
 
 const StyledSection = styled.section``;
-
-const SectionTitle = styled.h1`
-  font-size: 3rem;
-`;
 
 const Layout = styled.div`
   display: flex;

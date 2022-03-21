@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import screens from "../styles/screens";
-import professional from "../images/professional.png";
+import professional from "../images/photos/professional.png";
 import colours from "../styles/colours";
 
 const StyledHome = styled.section`
