@@ -24,9 +24,23 @@ const ScreenContainer = styled.main`
   width: 100vw;
   max-width: ${screens.lg};
   min-width: ${screens.minimum};
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   @media screen and (min-width: ${screens.md}) {
     width: 90vw;
+  }
+`;
+
+const ContentContainer = styled.div`
+  width: 90vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media screen and (min-width: ${screens.md}) {
+    width: 100%;
   }
 `;
 
@@ -36,8 +50,13 @@ function App() {
     <AppStyles darkMode={darkMode}>
       <ScreenContainer>
         <NavBar />
-        <Home />
-        <About />
+        <ContentContainer>
+          <Home />
+          <About />
+          <About />
+          <About />
+          <About />
+        </ContentContainer>
       </ScreenContainer>
     </AppStyles>
   );

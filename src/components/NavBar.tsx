@@ -12,6 +12,7 @@ interface LinkWrapperInterface {
 }
 
 const Header = styled.header<DarkMode>`
+  width: 100%;
   z-index: 10;
   position: sticky;
   top: 0px;
