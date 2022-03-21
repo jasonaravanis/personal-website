@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import screens from "../styles/screens";
 import { SectionTitle } from "./SectionTitle";
 import SkillTile from "./SkillTile";
 import ReactLogo from "../images/icons/react.png";
@@ -8,6 +9,8 @@ import StyledComponentsLogo from "../images/icons/styledComponents.png";
 import TailwindLogo from "../images/icons/tailwind.svg";
 import FramerMotionLogo from "../images/icons/framerMotion.png";
 import ReactSpringLogo from "../images/icons/reactSpring.png";
+import NodeLogo from "../images/icons/nodejs.png";
+import ExpressLogo from "../images/icons/express.png";
 
 const StyledSection = styled.section`
   width: 100%;
@@ -17,12 +20,17 @@ const SkillSection = styled.div``;
 
 const SectionSubTitle = styled.h2`
   font-size: 2rem;
+  margin: 0.5rem 0 0.5rem 0;
 `;
 
 const SkillGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(75px, 1fr));
   gap: 1rem;
+
+  @media screen and (min-width: ${screens.md}) {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
 `;
 
 const Skills = () => {
@@ -58,6 +66,21 @@ const Skills = () => {
             link="https://react-spring.io"
             img={ReactSpringLogo}
             title="react-spring"
+          />
+        </SkillGrid>
+      </SkillSection>
+      <SkillSection>
+        <SectionSubTitle>back-end</SectionSubTitle>
+        <SkillGrid>
+          <SkillTile
+            link="https://nodejs.org/en/"
+            img={NodeLogo}
+            title="nodejs"
+          />
+          <SkillTile
+            link="https://expressjs.com"
+            img={ExpressLogo}
+            title="express"
           />
         </SkillGrid>
       </SkillSection>

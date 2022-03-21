@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { useTheme } from "../contexts/Theme";
 import DarkMode from "../interfaces/DarkMode";
 import colours from "../styles/colours";
+import screens from "../styles/screens";
 
 interface IntSkillTile {
   img: string;
@@ -11,6 +12,12 @@ interface IntSkillTile {
 }
 
 const Container = styled.a`
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* align-items: center; */
+`;
+
+const Tile = styled.div`
   position: relative;
   display: grid;
   place-items: center;
@@ -30,7 +37,10 @@ const Container = styled.a`
 `;
 
 const Image = styled.img`
-  padding: 1rem;
+  padding: 0.5rem;
+  @media screen and (min-width: ${screens.md}) {
+    padding: 0.75rem;
+  }
 `;
 
 const HoverTitle = styled.div<DarkMode>`
@@ -55,14 +65,28 @@ const HoverTitle = styled.div<DarkMode>`
   }
 `;
 
+// This title for the skill only shows when the user is unable to hover (due to lack of a mouse pointer).
+const MobileTitle = styled.span`
+  width: 100%;
+  display: none;
+  text-align: center;
+  margin-top: 0.5rem;
+  @media (pointer: coarse) {
+    display: inline-block;
+  }
+`;
+
 const SkillTile: FC<IntSkillTile> = ({ img, title, link }) => {
   const darkMode = useTheme();
   return (
     <Container href={link} target="_blank">
-      <HoverTitle darkMode={darkMode}>
-        <span>{title}</span>
-      </HoverTitle>
-      <Image src={img} alt={title} />
+      <Tile>
+        <HoverTitle darkMode={darkMode}>
+          <span>{title}</span>
+        </HoverTitle>
+        <Image src={img} alt={title} />
+      </Tile>
+      <MobileTitle>{title}</MobileTitle>
     </Container>
   );
 };
