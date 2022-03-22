@@ -6,10 +6,10 @@ import "./styles/fonts.css";
 import Home from "./components/Home";
 import About from "./components/About";
 import Skills from "./components/Skills";
-import ColoursDemo from "./components/ColoursDemo";
 import DarkMode from "./interfaces/DarkMode";
 import screens from "./styles/screens";
 import Projects from "./components/Projects";
+import Contact from "./components/Contact";
 
 const AppStyles = styled.div<DarkMode>`
   display: flex;
@@ -58,7 +58,7 @@ function App() {
           <About />
           <Skills />
           <Projects />
-          <About />
+          <Contact />
         </ContentContainer>
       </ScreenContainer>
     </AppStyles>
