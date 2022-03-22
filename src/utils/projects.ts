@@ -2,6 +2,7 @@ import { IProject } from "../interfaces/Project";
 import skills from "./skills";
 import quicksnapGIF from "../images/gifs/quicksnap.gif";
 import fakebookGIF from "../images/gifs/fakebook.gif";
+import wheresWaldoGIF from "../images/gifs/wheresWaldo.gif";
 
 const projects: IProject[] = [
   {
@@ -33,6 +34,21 @@ const projects: IProject[] = [
       skills.express,
       skills.tailwindcss,
       skills.heroku,
+      skills.jest,
+    ],
+  },
+  {
+    title: "Where's Waldo?",
+    image: wheresWaldoGIF,
+    url: "https://my-attempt-b7181.web.app/",
+    repo: "https://github.com/Atlas-1510/where-is-waldo",
+    description:
+      "This is an implementation of the classic 'Where's Waldo' game, where a user competes to find hidden targets as quickly as possible.",
+    builtWith: [
+      skills.react,
+      skills.firebase,
+      skills.reactSpring,
+      skills.styledComponents,
       skills.jest,
     ],
   },
