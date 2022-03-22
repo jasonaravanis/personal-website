@@ -29,6 +29,7 @@ const frontEndSkills = [
   skills.react,
   skills.sass,
   skills.tailwindcss,
+  skills.styledComponents,
   skills.framerMotion,
   skills.reactSpring,
 ];
