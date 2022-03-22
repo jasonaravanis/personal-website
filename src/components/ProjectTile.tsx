@@ -13,7 +13,6 @@ const Container = styled.button`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: lightblue;
 `;
 
 const ProjectTitle = styled.span<DarkMode>`
@@ -22,7 +21,15 @@ const ProjectTitle = styled.span<DarkMode>`
     props.darkMode ? colours.dark.primary : colours.light.primary};
 `;
 
-const ProjectTile: FC<IProjectTile> = ({ title, image, setModal }) => {
+const ProjectTile: FC<IProjectTile> = ({
+  title,
+  image,
+  url,
+  repo,
+  description,
+  builtWith,
+  setModal,
+}) => {
   const darkMode = useTheme();
 
   return (
@@ -31,6 +38,10 @@ const ProjectTile: FC<IProjectTile> = ({ title, image, setModal }) => {
         setModal({
           image,
           title,
+          url,
+          repo,
+          description,
+          builtWith,
         })
       }
     >

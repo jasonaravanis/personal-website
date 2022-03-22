@@ -21,7 +21,7 @@ const Tile = styled.div`
   position: relative;
   /* display: grid; */
   /* place-items: center; */
-  aspect-ratio: 1/ 1;
+  aspect-ratio: 1 / 1;
   background-color: white;
   border-radius: 10px;
   overflow: hidden;
