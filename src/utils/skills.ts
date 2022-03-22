@@ -1,3 +1,4 @@
+import { ISkill } from "../interfaces/Skill";
 import ReactLogo from "../images/icons/react.png";
 import TypeScriptLogo from "../images/icons/typescript.png";
 import SassLogo from "../images/icons/sass.png";
@@ -18,7 +19,11 @@ import HerokuLogo from "../images/icons/heroku.png";
 import GitHubLogo from "../images/icons/github.png";
 import JestLogo from "../images/icons/jest.png";
 
-const skills = {
+interface SkillMap {
+  [skillName: string]: ISkill;
+}
+
+const skills: SkillMap = {
   react: {
     title: "react",
     image: ReactLogo,

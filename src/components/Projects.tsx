@@ -1,11 +1,10 @@
 import styled from "styled-components";
-import quicksnapGIF from "../images/gifs/quicksnap.gif";
 import { SectionTitle } from "./SectionTitle";
 import ProjectTile from "./ProjectTile";
 import Modal from "./Modal";
-import { ReactNode, useState } from "react";
+import { useState } from "react";
 import { IProject } from "../interfaces/Project";
-import skills from "../utils/skills";
+import projects from "../utils/projects";
 
 const StyledSection = styled.section`
   width: 100%;
@@ -25,20 +24,9 @@ const Projects = () => {
     <StyledSection>
       <SectionTitle>Projects</SectionTitle>
       <ProjectGrid>
-        <ProjectTile
-          title="QuickSnap"
-          image={quicksnapGIF}
-          url="https://quicksnap-58e9a.web.app"
-          repo="https://github.com/Atlas-1510/quicksnap"
-          description="QuickSnap is a media-sharing platform based on Instagram, which allows users to share photos, send messages, and like, comment, and save posts."
-          builtWith={[
-            skills.react,
-            skills.firebase,
-            skills.framerMotion,
-            skills.tailwindcss,
-          ]}
-          setModal={setModalContent}
-        />
+        {projects.map((project) => (
+          <ProjectTile project={project} setModal={setModalContent} />
+        ))}
       </ProjectGrid>
       <Modal content={modalContent} setContent={setModalContent} />
     </StyledSection>
