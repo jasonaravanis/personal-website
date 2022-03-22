@@ -1,4 +1,4 @@
-import { IBuiltWith } from "./BuiltWith";
+import { ISkill } from "./Skill";
 
 export interface IProject {
   image: string;
@@ -6,5 +6,5 @@ export interface IProject {
   url: string;
   repo: string;
   description: string;
-  builtWith: IBuiltWith[];
+  builtWith: ISkill[];
 }

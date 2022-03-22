@@ -4,11 +4,10 @@ import { useTheme } from "../contexts/Theme";
 import DarkMode from "../interfaces/DarkMode";
 import colours from "../styles/colours";
 import screens from "../styles/screens";
+import { ISkill } from "../interfaces/Skill";
 
 interface IntSkillTile {
-  img: string;
-  title: string;
-  link: string;
+  skill: ISkill;
 }
 
 const Container = styled.a`
@@ -80,17 +79,17 @@ const MobileTitle = styled.span`
   }
 `;
 
-const SkillTile: FC<IntSkillTile> = ({ img, title, link }) => {
+const SkillTile: FC<IntSkillTile> = ({ skill }) => {
   const darkMode = useTheme();
   return (
-    <Container href={link} target="_blank">
+    <Container href={skill.link} target="_blank">
       <Tile>
         <HoverTitle darkMode={darkMode}>
-          <span>{title}</span>
+          <span>{skill.title}</span>
         </HoverTitle>
-        <Image src={img} alt={title} />
+        <Image src={skill.image} alt={skill.title} />
       </Tile>
-      <MobileTitle>{title}</MobileTitle>
+      <MobileTitle>{skill.title}</MobileTitle>
     </Container>
   );
 };
