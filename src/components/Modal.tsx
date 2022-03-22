@@ -34,8 +34,9 @@ const Layout = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
 
-  @media screen and (min-width: ${screens.md}) {
+  @media screen and (min-width: ${screens.lg}) {
     flex-direction: row;
   }
 `;
@@ -75,8 +76,9 @@ const BuiltWithTitle = styled.h2`
 
 const BuiltWithGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(20px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(45px, 1fr));
   gap: 0.5rem;
+  margin: 0.5rem 0 0.5rem 0;
 
   @media screen and (min-width: ${screens.md}) {
     grid-template-columns: repeat(auto-fill, minmax(45px, 1fr));
@@ -87,6 +89,7 @@ const ImageAndButtonsContainer = styled.div`
   min-width: 50%;
   display: flex;
   flex-direction: column;
+  margin: 1rem 0 1rem 0;
 `;
 
 const Image = styled.img``;
@@ -116,13 +119,14 @@ const Modal: FC<Props> = ({ content, setContent }) => {
   if (!content) {
     document.body.style.overflow = "auto";
     return null;
+  } else {
+    document.body.style.overflow = "hidden";
   }
 
   const closeModal = () => {
     setContent(null);
   };
 
-  document.body.style.overflow = "hidden";
   return createPortal(
     <Backdrop onClick={closeModal}>
       <ContentContainer>
