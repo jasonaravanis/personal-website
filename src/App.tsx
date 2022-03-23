@@ -1,8 +1,9 @@
 import { NavBar } from "./components/NavBar";
 import { useTheme } from "./contexts/Theme";
 import styled from "styled-components";
+import GlobalFonts from "./styles/fonts/fonts";
 import colours from "./styles/colours";
-import "./styles/fonts.css";
+import "./styles/fonts/fonts.css";
 import Home from "./components/Home";
 import About from "./components/About";
 import Skills from "./components/Skills";
@@ -51,6 +52,7 @@ function App() {
   const darkMode = useTheme();
   return (
     <AppStyles darkMode={darkMode}>
+      <GlobalFonts />
       <ScreenContainer>
         <NavBar />
         <ContentContainer>
