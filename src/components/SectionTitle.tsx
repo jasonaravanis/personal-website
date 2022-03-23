@@ -6,6 +6,7 @@ import colours from "../styles/colours";
 
 interface Props {
   children: ReactNode;
+  color?: string;
 }
 
 const Container = styled.h1<DarkMode>`
@@ -14,10 +15,17 @@ const Container = styled.h1<DarkMode>`
   font-family: "Tungsten";
   text-transform: uppercase;
   color: ${(props) =>
-    props.darkMode ? colours.dark.primary : colours.light.primary};
+    props.color
+      ? props.color
+      : (props) =>
+          props.darkMode ? colours.dark.primary : colours.light.primary};
 `;
 
-export const SectionTitle: FC<Props> = ({ children }) => {
+export const SectionTitle: FC<Props> = ({ children, color }) => {
   const darkMode = useTheme();
-  return <Container darkMode={darkMode}>{children}</Container>;
+  return (
+    <Container color={color} darkMode={darkMode}>
+      {children}
+    </Container>
+  );
 };

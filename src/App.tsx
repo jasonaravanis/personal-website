@@ -15,7 +15,7 @@ import Contact from "./components/Contact";
 const AppStyles = styled.div<DarkMode>`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
   color: ${(props) =>
     props.darkMode ? colours.dark.secondary : colours.light.secondary};
   background: ${(props) =>
@@ -23,29 +23,23 @@ const AppStyles = styled.div<DarkMode>`
   font-family: "Raleway";
 `;
 
-const ScreenContainer = styled.main`
+const ScreenContainer = styled.div`
   width: 100vw;
-  max-width: ${screens.lg};
   min-width: ${screens.minimum};
   display: flex;
   flex-direction: column;
-  align-items: center;
-
-  @media screen and (min-width: ${screens.md}) {
-    width: 90vw;
-  }
+  /* align-items: center; */
 `;
 
 const ContentContainer = styled.div`
-  width: 90vw;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
   margin-top: 3rem;
 
-  @media screen and (min-width: ${screens.md}) {
+  /* @media screen and (min-width: ${screens.md}) {
     width: 100%;
-  }
+  } */
 `;
 
 function App() {

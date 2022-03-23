@@ -1,19 +1,51 @@
 import { FC, ReactNode } from "react";
 import styled from "styled-components";
+import screens from "../styles/screens";
+import { IBackground } from "../interfaces/Background";
+import { useTheme } from "../contexts/Theme";
 
 interface Props {
   children: ReactNode;
   id: string;
+  lightBackground: string;
+  darkBackground: string;
 }
 
-const StyledSection = styled.section`
-  padding-top: 3rem;
-  width: 100%;
-  position: relative;
+const FullScreenBackGround = styled.section<IBackground>`
+  display: flex;
+  justify-content: center;
+  background-color: ${(props) =>
+    props.darkMode ? props.darkBackground : props.lightBackground};
 `;
 
-const Section: FC<Props> = ({ children, id }) => {
-  return <StyledSection id={id}>{children}</StyledSection>;
+const CentralContainer = styled.div`
+  position: relative;
+  padding: 2rem 0 2rem 0;
+  width: 90vw;
+
+  max-width: ${screens.lg};
+  /* @media screen and (min-width: ${screens.md}) {
+    width: 90vw;
+  } */
+`;
+
+const Section: FC<Props> = ({
+  children,
+  id,
+  lightBackground,
+  darkBackground,
+}) => {
+  const darkMode = useTheme();
+  return (
+    <FullScreenBackGround
+      id={id}
+      darkMode={darkMode}
+      lightBackground={lightBackground}
+      darkBackground={darkBackground}
+    >
+      <CentralContainer>{children}</CentralContainer>
+    </FullScreenBackGround>
+  );
 };
 
 export default Section;

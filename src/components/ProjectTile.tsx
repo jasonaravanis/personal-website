@@ -14,10 +14,14 @@ const Container = styled.button`
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: white;
+  padding: 1rem 1rem 0.5rem 1rem;
+  border-radius: 25px;
+  box-shadow: 0px 0px 10px -5px black;
 `;
 
-const ProjectTitle = styled.span<DarkMode>`
-  margin: 0.5rem;
+const ProjectLabel = styled.span<DarkMode>`
+  margin-top: 0.5rem;
   color: ${(props) =>
     props.darkMode ? colours.dark.primary : colours.light.primary};
 `;
@@ -39,7 +43,7 @@ const ProjectTile: FC<IProjectTile> = ({ project, setModal }) => {
       }
     >
       <img src={project.image} alt="title" />
-      <ProjectTitle darkMode={darkMode}>{project.title}</ProjectTitle>
+      <ProjectLabel darkMode={darkMode}>{project.title}</ProjectLabel>
     </Container>
   );
 };

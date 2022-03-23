@@ -52,7 +52,7 @@ const otherSkills = [
 
 const Skills = () => {
   return (
-    <Section id="skills">
+    <Section id="skills" lightBackground="#e9c46a" darkBackground="black">
       <SectionTitle>Skills</SectionTitle>
       <SkillSection>
         <SectionSubTitle>front-end</SectionSubTitle>

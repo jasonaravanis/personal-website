@@ -32,8 +32,8 @@ const ResumePrompt = styled.span`
 
 const Contact = () => {
   return (
-    <Section id="contact">
-      <SectionTitle>Contact</SectionTitle>
+    <Section id="contact" lightBackground="black" darkBackground="black">
+      <SectionTitle color="white">Contact</SectionTitle>
       <ContactGrid>
         <ContactBubble
           link="https://twitter.com/IamJasonA"

@@ -28,7 +28,7 @@ const Quote = styled.aside<DarkMode>`
   font-size: 1.5rem;
   margin: 1rem;
   color: ${(props) =>
-    props.darkMode ? colours.dark.primary : colours.light.primary};
+    props.darkMode ? colours.dark.highlight : colours.light.highlight};
   text-align: center;
 `;
 
@@ -39,7 +39,7 @@ const Paragraph = styled.p`
 const About = () => {
   const darkMode = useTheme();
   return (
-    <Section id="about">
+    <Section id="about" lightBackground="#2a9d8f" darkBackground="black">
       <SectionTitle>About</SectionTitle>
       <Layout>
         <TextContainer>

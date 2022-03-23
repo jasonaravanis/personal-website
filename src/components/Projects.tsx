@@ -17,7 +17,7 @@ const Projects = () => {
   const [modalContent, setModalContent] = useState<IProject | null>(null);
 
   return (
-    <Section id="projects">
+    <Section id="projects" lightBackground="#e76f51" darkBackground="black">
       <SectionTitle>Projects</SectionTitle>
       <ProjectGrid>
         {projects.map((project) => (
