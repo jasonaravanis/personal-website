@@ -5,11 +5,7 @@ import Modal from "./Modal";
 import { useState } from "react";
 import { IProject } from "../interfaces/Project";
 import projects from "../utils/projects";
-
-const StyledSection = styled.section`
-  width: 100%;
-  position: relative;
-`;
+import Section from "./Section";
 
 const ProjectGrid = styled.div`
   display: grid;
@@ -21,7 +17,7 @@ const Projects = () => {
   const [modalContent, setModalContent] = useState<IProject | null>(null);
 
   return (
-    <StyledSection>
+    <Section id="projects">
       <SectionTitle>Projects</SectionTitle>
       <ProjectGrid>
         {projects.map((project) => (
@@ -29,7 +25,7 @@ const Projects = () => {
         ))}
       </ProjectGrid>
       <Modal content={modalContent} setContent={setModalContent} />
-    </StyledSection>
+    </Section>
   );
 };
 

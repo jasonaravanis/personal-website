@@ -2,6 +2,7 @@ import styled from "styled-components";
 import screens from "../styles/screens";
 import professional from "../images/photos/professional.png";
 import colours from "../styles/colours";
+import Section from "./Section";
 
 const StyledHome = styled.section`
   display: flex;
@@ -74,16 +75,18 @@ const ProfessionalPhoto = styled.img`
 
 const Home = () => {
   return (
-    <StyledHome>
-      <TitleContainer>
-        <PrimaryTitle>
-          <span>Jason</span>
-          <span>Aravanis</span>
-        </PrimaryTitle>
-        <Subtitle>Full Stack Developer</Subtitle>
-      </TitleContainer>
-      <ProfessionalPhoto src={professional} alt="Professional headshot" />
-    </StyledHome>
+    <Section id="home">
+      <StyledHome>
+        <TitleContainer>
+          <PrimaryTitle>
+            <span>Jason</span>
+            <span>Aravanis</span>
+          </PrimaryTitle>
+          <Subtitle>Full Stack Developer</Subtitle>
+        </TitleContainer>
+        <ProfessionalPhoto src={professional} alt="Professional headshot" />
+      </StyledHome>
+    </Section>
   );
 };
 

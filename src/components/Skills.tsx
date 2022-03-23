@@ -3,10 +3,7 @@ import screens from "../styles/screens";
 import { SectionTitle } from "./SectionTitle";
 import SkillTile from "./SkillTile";
 import skills from "../utils/skills";
-
-const StyledSection = styled.section`
-  width: 100%;
-`;
+import Section from "./Section";
 
 const SkillSection = styled.div``;
 
@@ -55,7 +52,7 @@ const otherSkills = [
 
 const Skills = () => {
   return (
-    <StyledSection>
+    <Section id="skills">
       <SectionTitle>Skills</SectionTitle>
       <SkillSection>
         <SectionSubTitle>front-end</SectionSubTitle>
@@ -81,7 +78,7 @@ const Skills = () => {
           ))}
         </SkillGrid>
       </SkillSection>
-    </StyledSection>
+    </Section>
   );
 };
 

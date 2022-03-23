@@ -10,10 +10,7 @@ import {
 import ContactBubble from "./ContactBubble";
 import screens from "../styles/screens";
 import colours from "../styles/colours";
-
-const StyledSection = styled.section`
-  width: 100%;
-`;
+import Section from "./Section";
 
 const ContactGrid = styled.div`
   display: grid;
@@ -35,7 +32,7 @@ const ResumePrompt = styled.span`
 
 const Contact = () => {
   return (
-    <StyledSection>
+    <Section id="contact">
       <SectionTitle>Contact</SectionTitle>
       <ContactGrid>
         <ContactBubble
@@ -64,7 +61,7 @@ const Contact = () => {
         />
       </ContactGrid>
       <ResumePrompt>Click here to download my resume!</ResumePrompt>
-    </StyledSection>
+    </Section>
   );
 };
 

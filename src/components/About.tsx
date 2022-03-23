@@ -4,8 +4,7 @@ import DarkMode from "../interfaces/DarkMode";
 import { useTheme } from "../contexts/Theme";
 import screens from "../styles/screens";
 import { SectionTitle } from "./SectionTitle";
-
-const StyledSection = styled.section``;
+import Section from "./Section";
 
 const Layout = styled.div`
   display: flex;
@@ -40,7 +39,7 @@ const Paragraph = styled.p`
 const About = () => {
   const darkMode = useTheme();
   return (
-    <StyledSection>
+    <Section id="about">
       <SectionTitle>About</SectionTitle>
       <Layout>
         <TextContainer>
@@ -71,7 +70,7 @@ const About = () => {
           </Paragraph>
         </TextContainer>
       </Layout>
-    </StyledSection>
+    </Section>
   );
 };
 
