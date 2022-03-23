@@ -9,6 +9,7 @@ import {
 
 import ContactBubble from "./ContactBubble";
 import screens from "../styles/screens";
+import colours from "../styles/colours";
 
 const StyledSection = styled.section`
   width: 100%;
@@ -24,6 +25,14 @@ const ContactGrid = styled.div`
   }
 `;
 
+const ResumePrompt = styled.span`
+  display: block;
+  text-align: center;
+  margin: 2rem;
+  font-size: 3rem;
+  color: ${colours.light.primary};
+`;
+
 const Contact = () => {
   return (
     <StyledSection>
@@ -32,20 +41,29 @@ const Contact = () => {
         <ContactBubble
           link="https://twitter.com/IamJasonA"
           Icon={<AiOutlineTwitter />}
+          hoverBackgroundColor="#009EF7"
+          hoverIconColor="white"
         />
         <ContactBubble
           link="https://www.linkedin.com/in/jason-aravanis"
           Icon={<AiOutlineLinkedin />}
+          hoverBackgroundColor="#0072b1"
+          hoverIconColor="white"
         />
         <ContactBubble
           link="https://github.com/Atlas-1510"
           Icon={<AiOutlineGithub />}
+          hoverBackgroundColor="#171515"
+          hoverIconColor="white"
         />
         <ContactBubble
           link="mailto:j.aravanis@icloud.com"
           Icon={<AiOutlineMail />}
+          hoverBackgroundColor="#A73946"
+          hoverIconColor="white"
         />
       </ContactGrid>
+      <ResumePrompt>Click here to download my resume!</ResumePrompt>
     </StyledSection>
   );
 };

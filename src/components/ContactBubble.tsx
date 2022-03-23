@@ -3,30 +3,53 @@ import styled from "styled-components";
 import { IconContext } from "react-icons";
 import colours from "../styles/colours";
 import screens from "../styles/screens";
-const Container = styled.a`
+
+interface Props {
+  Icon: ReactNode;
+  link: string;
+  hoverBackgroundColor: string;
+  hoverIconColor: string;
+}
+
+interface IHoverColor {
+  hoverBackgroundColor?: string;
+  hoverIconColor?: string;
+}
+
+const Container = styled.a<IHoverColor>`
   display: grid;
   place-items: center;
   background-color: white;
   aspect-ratio: 1 / 1;
   border-radius: 50%;
   padding: 0.5rem;
+  color: ${colours.light.primary};
+  transition: all 200ms ease-in-out;
 
   @media screen and (min-width: ${screens.sm}) {
     padding: 1rem;
   }
+
+  &:hover {
+    background-color: ${(props) => props.hoverBackgroundColor};
+    color: ${(props) => props.hoverIconColor};
+  }
 `;
 
-interface Props {
-  Icon: ReactNode;
-  link: string;
-}
-
-const ContactBubble: FC<Props> = ({ Icon, link }) => {
+const ContactBubble: FC<Props> = ({
+  Icon,
+  link,
+  hoverBackgroundColor,
+  hoverIconColor,
+}) => {
   return (
-    <Container href={link} target="_blank">
-      <IconContext.Provider
-        value={{ color: colours.light.primary, size: "100%" }}
-      >
+    <Container
+      href={link}
+      target="_blank"
+      hoverBackgroundColor={hoverBackgroundColor}
+      hoverIconColor={hoverIconColor}
+    >
+      <IconContext.Provider value={{ size: "100%" }}>
         {Icon}
       </IconContext.Provider>
     </Container>
