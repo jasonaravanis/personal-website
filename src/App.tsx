@@ -17,9 +17,7 @@ const AppStyles = styled.div<DarkMode>`
   flex-direction: column;
   /* align-items: center; */
   color: ${(props) =>
-    props.darkMode ? colours.dark.secondary : colours.light.secondary};
-  background: ${(props) =>
-    props.darkMode ? colours.dark.background : colours.light.background};
+    props.darkMode ? colours.dark.textWhite : colours.light.textBlack};
   font-family: "Raleway";
 `;
 

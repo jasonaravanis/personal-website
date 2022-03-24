@@ -17,13 +17,13 @@ const Container = styled.button`
   background-color: white;
   padding: 1rem 1rem 0.5rem 1rem;
   border-radius: 25px;
-  box-shadow: 0px 0px 10px -5px black;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
 `;
 
 const ProjectLabel = styled.span<DarkMode>`
   margin-top: 0.5rem;
   color: ${(props) =>
-    props.darkMode ? colours.dark.primary : colours.light.primary};
+    props.darkMode ? colours.dark.textWhite : colours.light.textBlack};
 `;
 
 const ProjectTile: FC<IProjectTile> = ({ project, setModal }) => {

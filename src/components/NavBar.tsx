@@ -20,11 +20,7 @@ const Header = styled.header<DarkMode>`
   justify-content: space-between;
   flex-direction: column;
   background-color: black;
-  color: ${(props) =>
-    props.darkMode ? colours.dark.highlight : colours.light.highlight};
-  /* color: white; */
-  /* background-color: ${(props) =>
-    props.darkMode ? colours.dark.background : colours.light.background}; */
+  color: ${colours.light.textWhite};
   @media screen and (min-width: ${screens.sm}) {
     flex-direction: row;
   }

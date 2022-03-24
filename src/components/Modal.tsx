@@ -7,6 +7,7 @@ import { IconContext } from "react-icons";
 import colours from "../styles/colours";
 import screens from "../styles/screens";
 import BuiltWithTile from "../components/BuiltWithTile";
+import { useTheme } from "../contexts/Theme";
 
 interface Props {
   content: IProject | null;
@@ -115,6 +116,7 @@ const Link = styled.a`
 `;
 
 const Modal: FC<Props> = ({ content, setContent }) => {
+  const darkMode = useTheme();
   // overflow styles applied to body to prevent scrolling of main content while modal is open.
   if (!content) {
     document.body.style.overflow = "auto";
@@ -132,7 +134,12 @@ const Modal: FC<Props> = ({ content, setContent }) => {
       <ContentContainer>
         <ExitButton onClick={closeModal}>
           <IconContext.Provider
-            value={{ size: "2rem", color: colours.light.secondary }}
+            value={{
+              size: "2rem",
+              color: darkMode
+                ? colours.dark.highlight
+                : colours.light.highlight,
+            }}
           >
             <FiX />
           </IconContext.Provider>

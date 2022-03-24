@@ -10,23 +10,17 @@ interface IntSkillTile {
   skill: ISkill;
 }
 
-const Container = styled.a`
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* align-items: center; */
-`;
+const Container = styled.a``;
 
 const Tile = styled.div`
   position: relative;
-  /* display: grid; */
-  /* place-items: center; */
   aspect-ratio: 1 / 1;
   background-color: white;
   border-radius: 10px;
   overflow: hidden;
   cursor: pointer;
-  -webkit-box-shadow: 0px 0px 13px -5px #7d7d7d;
-  box-shadow: 0px 0px 13px -5px #7d7d7d;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+
   transition: transform 100ms ease-in-out;
 
   &:hover {
@@ -53,7 +47,7 @@ const HoverTitle = styled.span<DarkMode>`
   place-items: center;
   text-align: center;
   color: ${(props) =>
-    props.darkMode ? colours.dark.primary : colours.light.primary};
+    props.darkMode ? colours.dark.textWhite : colours.light.textBlack};
 
   background: rgba(255, 255, 255, 0.25);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -68,12 +62,15 @@ const HoverTitle = styled.span<DarkMode>`
 `;
 
 // This title for the skill only shows when the user is unable to hover (due to lack of a mouse pointer).
-const MobileTitle = styled.span`
+const MobileTitle = styled.span<DarkMode>`
   width: 100%;
   display: none;
   text-align: center;
   font-size: 0.8rem;
   margin-top: 0.5rem;
+  color: ${(props) =>
+    props.darkMode ? colours.dark.textWhite : colours.light.textBlack};
+
   @media (pointer: coarse) {
     display: inline-block;
   }
@@ -89,7 +86,7 @@ const SkillTile: FC<IntSkillTile> = ({ skill }) => {
         </HoverTitle>
         <Image src={skill.image} alt={skill.title} />
       </Tile>
-      <MobileTitle>{skill.title}</MobileTitle>
+      <MobileTitle darkMode={darkMode}>{skill.title}</MobileTitle>
     </Container>
   );
 };

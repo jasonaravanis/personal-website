@@ -5,31 +5,55 @@ import { useTheme } from "../contexts/Theme";
 import screens from "../styles/screens";
 import { SectionTitle } from "./SectionTitle";
 import Section from "./Section";
+import headshot from "../images/photos/headshot.jpeg";
 
 const Layout = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: center;
 
   @media screen and (min-width: ${screens.md}) {
-    display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1rem;
   }
 `;
 
-const TextContainer = styled.div`
+const Aside = styled.aside`
+  max-width: 70vw;
   display: grid;
-  place-items: center;
-  /* margin: 1rem; */
+  grid-template-columns: 1fr 2fr;
+  background-color: white;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 `;
 
-const Quote = styled.aside<DarkMode>`
-  font-size: 1.5rem;
+const Photo = styled.img`
+  object-fit: cover;
+  height: 100%;
+`;
+
+const TextContainer = styled.div<DarkMode>`
+  display: grid;
+  place-items: center;
+  margin: 1rem;
+  color: ${(props) =>
+    props.darkMode ? colours.dark.textWhite : colours.light.textBlack};
+`;
+
+const Quote = styled.span<DarkMode>`
+  font-size: 1rem;
+  font-weight: 300;
+  font-style: italic;
+  display: grid;
+  place-items: center;
   margin: 1rem;
   color: ${(props) =>
     props.darkMode ? colours.dark.highlight : colours.light.highlight};
   text-align: center;
+
+  @media screen and (min-width: ${screens.md}) {
+    font-size: 1.2rem;
+  }
 `;
 
 const Paragraph = styled.p`
@@ -39,17 +63,18 @@ const Paragraph = styled.p`
 const About = () => {
   const darkMode = useTheme();
   return (
-    <Section id="about" lightBackground="#2a9d8f" darkBackground="black">
+    <Section id="about" lightBackground="#C5DEDD" darkBackground="black">
       <SectionTitle>About</SectionTitle>
       <Layout>
-        <TextContainer>
+        <Aside>
+          <Photo src={headshot} alt="headshot of Jason" />
           <Quote darkMode={darkMode}>
             "A career based on creativity, constant learning, and cutting edge
             technology. The potential to touch the lives of billions. What's not
             to love?"
           </Quote>
-        </TextContainer>
-        <TextContainer>
+        </Aside>
+        <TextContainer darkMode={darkMode}>
           <Paragraph>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates
             odit doloribus distinctio nihil consectetur, placeat veritatis.

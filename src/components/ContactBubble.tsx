@@ -23,7 +23,7 @@ const Container = styled.a<IHoverColor>`
   aspect-ratio: 1 / 1;
   border-radius: 50%;
   padding: 0.5rem;
-  color: ${colours.light.primary};
+  color: black;
   transition: all 200ms ease-in-out;
 
   @media screen and (min-width: ${screens.sm}) {

@@ -11,6 +11,8 @@ import ContactBubble from "./ContactBubble";
 import screens from "../styles/screens";
 import colours from "../styles/colours";
 import Section from "./Section";
+import DarkMode from "../interfaces/DarkMode";
+import { useTheme } from "../contexts/Theme";
 
 const ContactGrid = styled.div`
   display: grid;
@@ -22,15 +24,16 @@ const ContactGrid = styled.div`
   }
 `;
 
-const ResumePrompt = styled.span`
+const ResumePrompt = styled.span<DarkMode>`
   display: block;
   text-align: center;
   margin: 2rem;
   font-size: 3rem;
-  color: ${colours.light.primary};
+  color: ${colours.dark.textWhite};
 `;
 
 const Contact = () => {
+  const darkMode = useTheme();
   return (
     <Section id="contact" lightBackground="black" darkBackground="black">
       <SectionTitle color="white">Contact</SectionTitle>
@@ -60,7 +63,9 @@ const Contact = () => {
           hoverIconColor="white"
         />
       </ContactGrid>
-      <ResumePrompt>Click here to download my resume!</ResumePrompt>
+      <ResumePrompt darkMode={darkMode}>
+        Click here to download my resume!
+      </ResumePrompt>
     </Section>
   );
 };
