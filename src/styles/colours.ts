@@ -5,7 +5,7 @@ const colours = {
     backgroundThree: "#C9C9C9",
     textBlack: "black",
     textWhite: "white",
-    highlight: "black",
+    highlight: "#9d4edd",
   },
   light: {
     backgroundOne: "#F0EFEB",

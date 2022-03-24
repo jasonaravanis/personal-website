@@ -26,7 +26,11 @@ const Projects = () => {
       <SectionTitle>Projects</SectionTitle>
       <ProjectGrid>
         {projects.map((project) => (
-          <ProjectTile project={project} setModal={setModalContent} />
+          <ProjectTile
+            key={project.title}
+            project={project}
+            setModal={setModalContent}
+          />
         ))}
       </ProjectGrid>
       <Modal content={modalContent} setContent={setModalContent} />

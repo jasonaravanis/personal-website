@@ -104,11 +104,14 @@ const LinksContainer = styled.div`
   justify-content: center;
 `;
 
-const Link = styled.a`
+const Link = styled.a<DarkMode>`
   padding: 0.5rem 1rem 0.5rem 1rem;
   margin: 1rem;
-  border: 1px solid ${colours.light.highlight};
-  color: ${colours.light.highlight};
+  border: 1px solid
+    ${(props) =>
+      props.darkMode ? colours.dark.highlight : colours.light.highlight};
+  color: ${(props) =>
+    props.darkMode ? colours.dark.highlight : colours.light.highlight};
   border-radius: 25px;
   text-align: center;
   &:hover {
@@ -156,6 +159,7 @@ const Modal: FC<Props> = ({ content, setContent }) => {
             <BuiltWithGrid>
               {content.builtWith.map((tool) => (
                 <BuiltWithTile
+                  key={tool.title}
                   link={tool.link}
                   img={tool.image}
                   title={tool.title}
@@ -166,10 +170,10 @@ const Modal: FC<Props> = ({ content, setContent }) => {
           <ImageAndButtonsContainer>
             <img src={content.image} alt={content.title} />
             <LinksContainer>
-              <Link href={content.url} target="_blank">
+              <Link darkMode={darkMode} href={content.url} target="_blank">
                 Live Preview
               </Link>
-              <Link href={content.repo} target="_blank">
+              <Link darkMode={darkMode} href={content.repo} target="_blank">
                 View Code
               </Link>
             </LinksContainer>

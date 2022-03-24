@@ -7,6 +7,7 @@ import { IProject } from "../interfaces/Project";
 
 interface IProjectTile {
   project: IProject;
+  key: string;
   setModal: (project: IProject) => void;
 }
 
@@ -26,7 +27,7 @@ const Container = styled.button<DarkMode>`
 const ProjectLabel = styled.span<DarkMode>`
   margin-top: 0.5rem;
   color: ${(props) =>
-    props.darkMode ? colours.dark.textWhite : colours.light.textBlack};
+    props.darkMode ? colours.dark.textBlack : colours.light.textBlack};
 `;
 
 const ProjectTile: FC<IProjectTile> = ({ project, setModal }) => {

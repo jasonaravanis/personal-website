@@ -63,7 +63,7 @@ const Skills = () => {
         <SectionSubTitle>front-end</SectionSubTitle>
         <SkillGrid>
           {frontEndSkills.map((skill) => (
-            <SkillTile skill={skill} />
+            <SkillTile key={skill.title} skill={skill} />
           ))}
         </SkillGrid>
       </SkillSection>
@@ -71,7 +71,7 @@ const Skills = () => {
         <SectionSubTitle>back-end</SectionSubTitle>
         <SkillGrid>
           {backEndSkills.map((skill) => (
-            <SkillTile skill={skill} />
+            <SkillTile key={skill.title} skill={skill} />
           ))}
         </SkillGrid>
       </SkillSection>
@@ -79,7 +79,7 @@ const Skills = () => {
         <SectionSubTitle>other</SectionSubTitle>
         <SkillGrid>
           {otherSkills.map((skill) => (
-            <SkillTile skill={skill} />
+            <SkillTile key={skill.title} skill={skill} />
           ))}
         </SkillGrid>
       </SkillSection>

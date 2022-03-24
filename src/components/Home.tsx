@@ -49,7 +49,7 @@ const Subtitle = styled.span<DarkMode>`
   font-family: "Raleway";
   font-size: 2rem;
   color: ${(props) =>
-    props.darkMode ? colours.dark.highlight : colours.light.highlight};
+    props.darkMode ? colours.dark.textWhite : colours.light.highlight};
 
   @media screen and (min-width: ${screens.md}) {
     align-items: flex-start;

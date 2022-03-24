@@ -8,6 +8,7 @@ import { ISkill } from "../interfaces/Skill";
 
 interface IntSkillTile {
   skill: ISkill;
+  key: string;
 }
 
 const Container = styled.a``;
@@ -42,17 +43,16 @@ const Image = styled.img`
   }
 `;
 
-const HoverTitle = styled.span<DarkMode>`
+const HoverTitle = styled.span`
   position: absolute;
   width: 100%;
   height: 100%;
   display: grid;
   place-items: center;
   text-align: center;
-  color: ${(props) =>
-    props.darkMode ? colours.dark.textWhite : colours.light.textBlack};
+  color: black;
 
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.5);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
@@ -84,7 +84,7 @@ const SkillTile: FC<IntSkillTile> = ({ skill }) => {
   return (
     <Container href={skill.link} target="_blank">
       <Tile darkMode={darkMode}>
-        <HoverTitle darkMode={darkMode}>
+        <HoverTitle>
           <span>{skill.title}</span>
         </HoverTitle>
         <Image src={skill.image} alt={skill.title} />
