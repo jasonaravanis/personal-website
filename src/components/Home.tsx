@@ -18,10 +18,15 @@ const StyledHome = styled.section`
   }
 `;
 
-const TitleContainer = styled.div`
+const TitleContainer = styled.div<DarkMode>`
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: 3px solid
+    ${(props) =>
+      props.darkMode ? colours.dark.highlight : colours.light.highlight};
+  padding: 1rem 2rem 1rem 2rem;
+  line-height: 1;
 `;
 
 const PrimaryTitle = styled.span<DarkMode>`
@@ -44,12 +49,12 @@ const PrimaryTitle = styled.span<DarkMode>`
 `;
 
 const Subtitle = styled.span<DarkMode>`
-  position: relative;
-  top: -3vw;
+  /* position: relative; */
+  /* top: -3vw; */
   font-family: "Raleway";
   font-size: 2rem;
   color: ${(props) =>
-    props.darkMode ? colours.dark.textWhite : colours.light.highlight};
+    props.darkMode ? colours.dark.highlight : colours.light.highlight};
 
   @media screen and (min-width: ${screens.md}) {
     align-items: flex-start;
@@ -71,10 +76,8 @@ const Home = () => {
       darkBackground={colours.dark.backgroundOne}
     >
       <StyledHome>
-        <TitleContainer>
-          <PrimaryTitle darkMode={darkMode}>
-            <span>JASON ARAVANIS</span>
-          </PrimaryTitle>
+        <TitleContainer darkMode={darkMode}>
+          <PrimaryTitle darkMode={darkMode}>JASON ARAVANIS</PrimaryTitle>
           <Subtitle darkMode={darkMode}>Full Stack Developer</Subtitle>
         </TitleContainer>
         {/* <ProfessionalPhoto src={professional} alt="Professional headshot" /> */}
