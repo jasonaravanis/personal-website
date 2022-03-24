@@ -8,18 +8,22 @@ import colours from "../styles/colours";
 import screens from "../styles/screens";
 import BuiltWithTile from "../components/BuiltWithTile";
 import { useTheme } from "../contexts/Theme";
+import DarkMode from "../interfaces/DarkMode";
 
 interface Props {
   content: IProject | null;
   setContent: (content: IProject | null) => void;
 }
 
-const ContentContainer = styled.div`
+const ContentContainer = styled.div<DarkMode>`
   position: fixed;
   max-width: 90vw;
   display: flex;
   flex-direction: column;
-  background: white;
+  background: ${(props) =>
+    props.darkMode
+      ? colours.dark.backgroundThree
+      : colours.light.backgroundThree};
   border-radius: 25px;
   padding: 1rem;
   z-index: 10000;
@@ -131,7 +135,7 @@ const Modal: FC<Props> = ({ content, setContent }) => {
 
   return createPortal(
     <Backdrop onClick={closeModal}>
-      <ContentContainer>
+      <ContentContainer darkMode={darkMode}>
         <ExitButton onClick={closeModal}>
           <IconContext.Provider
             value={{
