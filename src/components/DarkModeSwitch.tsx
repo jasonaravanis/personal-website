@@ -24,7 +24,7 @@ const StyledLabel = styled.label<StyledLabelInterface>`
   display: flex;
   align-items: center;
   margin: 1em;
-  color: ${(props) => (props.darkMode ? colours.dark.highlight : "inherit")};
+  color: white;
   cursor: pointer;
   &:before {
     content: "";

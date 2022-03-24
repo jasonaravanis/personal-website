@@ -38,7 +38,7 @@ const Photo = styled.img`
 const TextContainer = styled.div<DarkMode>`
   display: grid;
   place-items: center;
-  margin: 1rem;
+  margin: 2rem;
   color: ${(props) =>
     props.darkMode ? colours.dark.textWhite : colours.light.textBlack};
 `;

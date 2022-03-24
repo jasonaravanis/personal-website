@@ -24,9 +24,6 @@ const CentralContainer = styled.div`
   width: 90vw;
 
   max-width: ${screens.lg};
-  /* @media screen and (min-width: ${screens.md}) {
-    width: 90vw;
-  } */
 `;
 
 const Section: FC<Props> = ({

@@ -50,7 +50,6 @@ const Subtitle = styled.span<DarkMode>`
   font-size: 2rem;
   color: ${(props) =>
     props.darkMode ? colours.dark.highlight : colours.light.highlight};
-  color: #64a6a3;
 
   @media screen and (min-width: ${screens.md}) {
     align-items: flex-start;
