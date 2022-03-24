@@ -12,10 +12,13 @@ interface IntSkillTile {
 
 const Container = styled.a``;
 
-const Tile = styled.div`
+const Tile = styled.div<DarkMode>`
   position: relative;
   aspect-ratio: 1 / 1;
-  background-color: white;
+  background-color: ${(props) =>
+    props.darkMode
+      ? colours.dark.backgroundThree
+      : colours.light.backgroundThree};
   border-radius: 10px;
   overflow: hidden;
   cursor: pointer;
@@ -80,7 +83,7 @@ const SkillTile: FC<IntSkillTile> = ({ skill }) => {
   const darkMode = useTheme();
   return (
     <Container href={skill.link} target="_blank">
-      <Tile>
+      <Tile darkMode={darkMode}>
         <HoverTitle darkMode={darkMode}>
           <span>{skill.title}</span>
         </HoverTitle>

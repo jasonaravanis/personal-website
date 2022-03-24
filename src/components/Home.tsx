@@ -66,7 +66,11 @@ const Subtitle = styled.span<DarkMode>`
 const Home = () => {
   const darkMode = useTheme();
   return (
-    <Section id="home" lightBackground="#F0EFEB" darkBackground="black">
+    <Section
+      id="home"
+      lightBackground={colours.light.backgroundOne}
+      darkBackground={colours.dark.backgroundOne}
+    >
       <StyledHome>
         <TitleContainer>
           <PrimaryTitle darkMode={darkMode}>

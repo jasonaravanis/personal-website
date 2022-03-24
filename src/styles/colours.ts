@@ -1,14 +1,16 @@
 const colours = {
   dark: {
-    backgroundOne: "#F0EFEB",
-    backgroundTwo: "#C5DEDD",
+    backgroundOne: "#B0A796",
+    backgroundTwo: "#345B59",
+    backgroundThree: "red",
     textBlack: "black",
     textWhite: "white",
-    highlight: "#64A6A3",
+    highlight: "white",
   },
   light: {
     backgroundOne: "#F0EFEB",
     backgroundTwo: "#C5DEDD",
+    backgroundThree: "white",
     textBlack: "black",
     textWhite: "white",
     highlight: "#64A6A3",

@@ -4,6 +4,7 @@ import { SectionTitle } from "./SectionTitle";
 import SkillTile from "./SkillTile";
 import skills from "../utils/skills";
 import Section from "./Section";
+import colours from "../styles/colours";
 
 const SkillSection = styled.div``;
 
@@ -52,7 +53,11 @@ const otherSkills = [
 
 const Skills = () => {
   return (
-    <Section id="skills" lightBackground="#F0EFEB" darkBackground="black">
+    <Section
+      id="skills"
+      lightBackground={colours.light.backgroundOne}
+      darkBackground={colours.dark.backgroundOne}
+    >
       <SectionTitle>Skills</SectionTitle>
       <SkillSection>
         <SectionSubTitle>front-end</SectionSubTitle>

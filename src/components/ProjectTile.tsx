@@ -10,11 +10,14 @@ interface IProjectTile {
   setModal: (project: IProject) => void;
 }
 
-const Container = styled.button`
+const Container = styled.button<DarkMode>`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: white;
+  background-color: ${(props) =>
+    props.darkMode
+      ? colours.dark.backgroundThree
+      : colours.light.backgroundThree};
   padding: 1rem 1rem 0.5rem 1rem;
   border-radius: 25px;
   box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
@@ -31,6 +34,7 @@ const ProjectTile: FC<IProjectTile> = ({ project, setModal }) => {
 
   return (
     <Container
+      darkMode={darkMode}
       onClick={() =>
         setModal({
           image: project.image,

@@ -17,11 +17,14 @@ const Layout = styled.div`
   }
 `;
 
-const Aside = styled.aside`
+const Aside = styled.aside<DarkMode>`
   max-width: 70vw;
   display: grid;
   grid-template-columns: 1fr 2fr;
-  background-color: white;
+  background-color: ${(props) =>
+    props.darkMode
+      ? colours.dark.backgroundThree
+      : colours.light.backgroundThree};
   border-radius: 25px;
   overflow: hidden;
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
@@ -63,10 +66,14 @@ const Paragraph = styled.p`
 const About = () => {
   const darkMode = useTheme();
   return (
-    <Section id="about" lightBackground="#C5DEDD" darkBackground="black">
+    <Section
+      id="about"
+      lightBackground={colours.light.backgroundTwo}
+      darkBackground={colours.dark.backgroundTwo}
+    >
       <SectionTitle>About</SectionTitle>
       <Layout>
-        <Aside>
+        <Aside darkMode={darkMode}>
           <Photo src={headshot} alt="headshot of Jason" />
           <Quote darkMode={darkMode}>
             "A career based on creativity, constant learning, and cutting edge
