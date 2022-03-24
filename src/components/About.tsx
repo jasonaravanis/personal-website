@@ -10,6 +10,7 @@ import headshot from "../images/photos/headshot.jpeg";
 const Layout = styled.div`
   display: grid;
   grid-template-columns: 1fr;
+  gap: 2rem;
   place-items: center;
 
   @media screen and (min-width: ${screens.md}) {
@@ -18,7 +19,7 @@ const Layout = styled.div`
 `;
 
 const Aside = styled.aside<DarkMode>`
-  max-width: 70vw;
+  /* max-width: 70vw; */
   display: grid;
   grid-template-columns: 1fr 2fr;
   background-color: ${(props) =>
@@ -38,7 +39,6 @@ const Photo = styled.img`
 const TextContainer = styled.div<DarkMode>`
   display: grid;
   place-items: center;
-  margin: 2rem;
   color: ${(props) =>
     props.darkMode ? colours.dark.textWhite : colours.light.textBlack};
 `;
@@ -83,22 +83,31 @@ const About = () => {
         </Aside>
         <TextContainer darkMode={darkMode}>
           <Paragraph>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates
-            odit doloribus distinctio nihil consectetur, placeat veritatis.
-            Dolores libero assumenda exercitationem ullam, sapiente voluptatibus
-            consequatur unde eos aut saepe iusto mollitia.
+            Back in early 2020 I had a great job as an economist. So, why did I
+            become a self-taught developer?
           </Paragraph>
           <Paragraph>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates
-            odit doloribus distinctio nihil consectetur, placeat veritatis.
-            Dolores libero assumenda exercitationem ullam, sapiente voluptatibus
-            consequatur unde eos aut saepe iusto mollitia.
+            While economic forecasting was interesting, I find deeper value in
+            creating something that solves a real world problem. Whether that's
+            building a website, an API, or a mobile app, I love the ability to
+            connect the dots and create something real. The ability to scale a
+            small app into something that reaches billions of users continually
+            amazes me.
           </Paragraph>
           <Paragraph>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates
-            odit doloribus distinctio nihil consectetur, placeat veritatis.
-            Dolores libero assumenda exercitationem ullam, sapiente voluptatibus
-            consequatur unde eos aut saepe iusto mollitia.
+            In my mind, the best parts of web development come from the
+            intersection of cutting edge technology, creative design, and the
+            relentless pursuit of doing things just a little bit more
+            efficiently.
+          </Paragraph>
+          <Paragraph>
+            In many ways, economics and programming aren't so different. It's
+            all about breaking a big problem into small parts, working well in a
+            team, and effective use of resources.
+          </Paragraph>
+          <Paragraph>
+            Check out my projects below, and get in touch if you like what you
+            see!
           </Paragraph>
         </TextContainer>
       </Layout>

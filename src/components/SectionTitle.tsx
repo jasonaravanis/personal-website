@@ -11,7 +11,7 @@ interface Props {
 
 const Container = styled.h1<DarkMode>`
   font-size: 3rem;
-  margin: 1rem 0 1rem 0;
+  margin-top: 1rem;
   font-family: "Tungsten";
   text-transform: uppercase;
   color: ${(props) =>
