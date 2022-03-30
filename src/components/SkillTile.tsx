@@ -18,9 +18,7 @@ const Tile = styled.div<DarkMode>`
   position: relative;
   aspect-ratio: 1 / 1;
   background-color: ${(props) =>
-    props.darkMode
-      ? colours.dark.backgroundThree
-      : colours.light.backgroundThree};
+    props.darkMode ? colours.dark.one : colours.light.one};
   border-radius: 10px;
   overflow: hidden;
   cursor: pointer;
@@ -72,8 +70,7 @@ const MobileTitle = styled.span<DarkMode>`
   text-align: center;
   font-size: 0.8rem;
   margin-top: 0.5rem;
-  color: ${(props) =>
-    props.darkMode ? colours.dark.textWhite : colours.light.textBlack};
+  color: ${(props) => (props.darkMode ? colours.dark.one : colours.light.one)};
 
   @media (pointer: coarse) {
     display: inline-block;

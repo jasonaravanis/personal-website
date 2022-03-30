@@ -24,9 +24,7 @@ const Aside = styled.aside<DarkMode>`
   display: grid;
   grid-template-columns: 1fr 2fr;
   background-color: ${(props) =>
-    props.darkMode
-      ? colours.dark.backgroundThree
-      : colours.light.backgroundThree};
+    props.darkMode ? colours.dark.one : colours.light.one};
   border-radius: 25px;
   overflow: hidden;
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
@@ -40,8 +38,7 @@ const Photo = styled.img`
 const TextContainer = styled.div<DarkMode>`
   display: grid;
   place-items: center;
-  color: ${(props) =>
-    props.darkMode ? colours.dark.textWhite : colours.light.textBlack};
+  color: ${(props) => (props.darkMode ? colours.dark.one : colours.light.one)};
 `;
 
 const Quote = styled.span<DarkMode>`
@@ -51,8 +48,7 @@ const Quote = styled.span<DarkMode>`
   display: grid;
   place-items: center;
   margin: 1rem;
-  color: ${(props) =>
-    props.darkMode ? colours.dark.highlight : colours.light.highlight};
+  color: ${(props) => (props.darkMode ? colours.dark.six : colours.light.six)};
   text-align: center;
 
   @media screen and (min-width: ${screens.md}) {
@@ -69,8 +65,8 @@ const About = () => {
   return (
     <Section
       id="about"
-      lightBackground={colours.light.backgroundTwo}
-      darkBackground={colours.dark.backgroundTwo}
+      lightBackground={colours.light.six}
+      darkBackground={colours.dark.six}
     >
       <motion.div
         initial={{ opacity: 0, y: 100 }}

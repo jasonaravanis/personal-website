@@ -33,9 +33,8 @@ const ContentContainer = styled.div<DarkMode>`
   flex-direction: column;
   padding: 1rem;
   background: ${(props) =>
-    props.darkMode
-      ? colours.dark.backgroundThree
-      : colours.light.backgroundThree};
+    props.darkMode ? colours.dark.one : colours.light.one};
+  color: ${(props) => (props.darkMode ? colours.dark.six : colours.light.six)};
   border-radius: 25px;
 `;
 
@@ -114,16 +113,14 @@ const Link = styled.a<DarkMode>`
   padding: 0.5rem 1rem 0.5rem 1rem;
   margin: 1rem;
   border: 1px solid
-    ${(props) =>
-      props.darkMode ? colours.dark.highlight : colours.light.highlight};
-  color: ${(props) =>
-    props.darkMode ? colours.dark.highlight : colours.light.highlight};
+    ${(props) => (props.darkMode ? colours.dark.two : colours.light.two)};
+  color: ${(props) => (props.darkMode ? colours.dark.two : colours.light.two)};
   border-radius: 25px;
   text-align: center;
   &:hover {
     border: 1px solid white;
     background-color: ${(props) =>
-      props.darkMode ? colours.dark.highlight : colours.light.highlight};
+      props.darkMode ? colours.dark.two : colours.light.two};
     color: white;
   }
   transition: all 100ms ease-in-out;
@@ -202,9 +199,7 @@ const Modal: FC<Props> = ({ content, setContent }) => {
             <IconContext.Provider
               value={{
                 size: "2rem",
-                color: darkMode
-                  ? colours.dark.highlight
-                  : colours.light.highlight,
+                color: darkMode ? colours.dark.one : colours.light.one,
               }}
             >
               <FiX />

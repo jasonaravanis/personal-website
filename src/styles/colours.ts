@@ -1,20 +1,23 @@
 const colours = {
   dark: {
-    backgroundOne: "#535353",
-    backgroundTwo: "#454545",
-    backgroundThree: "#C9C9C9",
-    textBlack: "black",
-    textWhite: "white",
-    highlight: "#9d4edd",
+    one: "#787878",
+    two: "#661235",
+    three: "#AE1105",
+    four: "#9200ED",
+    five: "#8E5740",
+    six: "#000910",
   },
   light: {
-    backgroundOne: "#F0EFEB",
-    backgroundTwo: "#AEDCC0",
-    backgroundThree: "white",
-    textBlack: "black",
-    textWhite: "white",
-    highlight: "#607466",
+    one: "#EBEBEB",
+    two: "#C62368",
+    three: "#FA7268",
+    four: "#EED3FF",
+    five: "#DEC2B6",
+    six: "#001220",
   },
 };
 
 export default colours;
+
+// #001220
+// #FDF7FA

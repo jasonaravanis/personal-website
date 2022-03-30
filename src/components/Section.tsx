@@ -12,7 +12,7 @@ interface Props {
 }
 
 const FullScreenBackGround = styled.section<IBackground>`
-  max-width: 100vw;
+  width: 100vw;
   overflow-x: hidden;
   display: flex;
   justify-content: center;
@@ -22,7 +22,7 @@ const FullScreenBackGround = styled.section<IBackground>`
 
 const CentralContainer = styled.div`
   position: relative;
-  padding: 2rem 0 2rem 0;
+  padding: 1rem;
   width: 90vw;
 
   max-width: ${screens.lg};

@@ -1,28 +1,38 @@
-import { FC } from "react";
+import { FC, ReactNode } from "react";
 import styled from "styled-components";
-import waveBorder from "../images/waveBorders/layered-waves-haikei-2.svg";
+import waveBorder from "../images/waveBorders/layered-waves-haikei.svg";
 
 interface Props {
-  flip?: boolean;
+  children: ReactNode;
 }
 
-interface Flip {
-  flip: boolean;
-}
-
-const Container = styled.div<Flip>`
+const TopWave = styled.div`
   position: relative;
-  aspect-ratio: 960/300;
+  aspect-ratio: 960/100;
   width: 100vw;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   background-image: url(${waveBorder});
-  transform: ${(props) => (props.flip ? "rotate(180deg)" : "")};
 `;
 
-const WaveBorder: FC<Props> = ({ flip }) => {
-  return <Container flip={flip || false}></Container>;
+const BottomWave = styled(TopWave)`
+  transform: rotate(180deg);
+`;
+
+const ContentContainer = styled.div`
+  display: grid;
+  place-items: center;
+`;
+
+const WaveBorder: FC<Props> = ({ children }) => {
+  return (
+    <div>
+      <TopWave />
+      <ContentContainer>{children}</ContentContainer>
+      <BottomWave />
+    </div>
+  );
 };
 
 export default WaveBorder;

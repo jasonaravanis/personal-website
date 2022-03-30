@@ -17,8 +17,7 @@ const Container = styled.h1<DarkMode>`
   color: ${(props) =>
     props.color
       ? props.color
-      : (props) =>
-          props.darkMode ? colours.dark.textWhite : colours.light.textBlack};
+      : (props) => (props.darkMode ? colours.dark.one : colours.light.one)};
 `;
 
 export const SectionTitle: FC<Props> = ({ children, color }) => {

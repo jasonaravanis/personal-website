@@ -17,8 +17,7 @@ const AppStyles = styled.div<DarkMode>`
   display: flex;
   flex-direction: column;
   /* align-items: center; */
-  color: ${(props) =>
-    props.darkMode ? colours.dark.textWhite : colours.light.textBlack};
+  color: ${(props) => (props.darkMode ? colours.dark.one : colours.light.one)};
   font-family: "Raleway";
 `;
 
@@ -49,13 +48,18 @@ function App() {
       <ScreenContainer>
         <NavBar />
         <ContentContainer>
-          <WaveBorder />
-          <Home />
-          <WaveBorder flip />
-          {/* <About />
-          <Skills />
-          <Projects />
-          <Contact /> */}
+          <WaveBorder>
+            <Home />
+            <About />
+          </WaveBorder>
+          <WaveBorder>
+            <Skills />
+          </WaveBorder>
+          <WaveBorder>
+            <Projects />
+          </WaveBorder>
+
+          <Contact />
         </ContentContainer>
       </ScreenContainer>
     </AppStyles>

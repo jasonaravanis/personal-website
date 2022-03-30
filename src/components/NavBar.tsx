@@ -20,8 +20,9 @@ const Header = styled.header<DarkMode>`
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  background-color: black;
-  color: ${colours.light.textWhite};
+  background-color: ${(props) =>
+    props.darkMode ? colours.dark.two : colours.light.two};
+  color: ${colours.light.one};
   @media screen and (min-width: ${screens.sm}) {
     flex-direction: row;
   }

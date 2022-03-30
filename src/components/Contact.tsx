@@ -29,13 +29,17 @@ const ResumePrompt = styled.span<DarkMode>`
   text-align: center;
   margin: 2rem;
   font-size: 3rem;
-  color: ${colours.dark.textWhite};
+  color: ${colours.light.one};
 `;
 
 const Contact = () => {
   const darkMode = useTheme();
   return (
-    <Section id="contact" lightBackground="black" darkBackground="black">
+    <Section
+      id="contact"
+      lightBackground={colours.light.six}
+      darkBackground={colours.light.six}
+    >
       <SectionTitle color="white">Contact</SectionTitle>
       <ContactGrid>
         <ContactBubble

@@ -85,8 +85,8 @@ const Skills = () => {
   return (
     <Section
       id="skills"
-      lightBackground={colours.light.backgroundOne}
-      darkBackground={colours.dark.backgroundOne}
+      lightBackground={colours.light.six}
+      darkBackground={colours.dark.six}
     >
       <SectionTitle>Skills</SectionTitle>
       <motion.div

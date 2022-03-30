@@ -20,9 +20,7 @@ const Container = styled.button<DarkMode>`
   flex-direction: column;
   align-items: center;
   background-color: ${(props) =>
-    props.darkMode
-      ? colours.dark.backgroundThree
-      : colours.light.backgroundThree};
+    props.darkMode ? colours.dark.one : colours.light.one};
   padding: 1rem 1rem 0.5rem 1rem;
   border-radius: 25px;
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
@@ -30,8 +28,7 @@ const Container = styled.button<DarkMode>`
 
 const ProjectLabel = styled.span<DarkMode>`
   margin-top: 0.5rem;
-  color: ${(props) =>
-    props.darkMode ? colours.dark.textBlack : colours.light.textBlack};
+  color: ${(props) => (props.darkMode ? colours.dark.six : colours.light.six)};
 `;
 
 const loadAnimation = {

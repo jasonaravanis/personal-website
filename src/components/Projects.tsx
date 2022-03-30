@@ -41,8 +41,8 @@ const Projects = () => {
   return (
     <Section
       id="projects"
-      lightBackground={colours.light.backgroundTwo}
-      darkBackground={colours.dark.backgroundTwo}
+      lightBackground={colours.light.six}
+      darkBackground={colours.dark.six}
     >
       <SectionTitle>Projects</SectionTitle>
       <ProjectGrid

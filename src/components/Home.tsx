@@ -25,8 +25,7 @@ const TitleContainer = styled.div<DarkMode>`
   flex-direction: column;
   align-items: center;
   border: 3px solid
-    ${(props) =>
-      props.darkMode ? colours.dark.highlight : colours.light.highlight};
+    ${(props) => (props.darkMode ? colours.dark.one : colours.light.one)};
   padding: 1rem 2rem 1rem 2rem;
   line-height: 1;
 `;
@@ -36,8 +35,7 @@ const PrimaryTitle = styled.span<DarkMode>`
   flex-direction: column;
   align-items: center;
   font-size: 5rem;
-  color: ${(props) =>
-    props.darkMode ? colours.dark.highlight : colours.light.highlight};
+  color: ${(props) => (props.darkMode ? colours.dark.one : colours.light.one)};
 
   @media screen and (min-width: ${screens.md}) {
     align-items: flex-start;
@@ -55,8 +53,7 @@ const Subtitle = styled.span<DarkMode>`
   /* top: -3vw; */
   font-family: "Raleway";
   font-size: 2rem;
-  color: ${(props) =>
-    props.darkMode ? colours.dark.highlight : colours.light.highlight};
+  color: ${(props) => (props.darkMode ? colours.dark.one : colours.light.one)};
 
   @media screen and (min-width: ${screens.md}) {
     align-items: flex-start;
@@ -90,8 +87,8 @@ const Home = () => {
   return (
     <Section
       id="home"
-      lightBackground={colours.light.backgroundOne}
-      darkBackground={colours.dark.backgroundOne}
+      lightBackground={colours.light.six}
+      darkBackground={colours.dark.six}
     >
       <StyledHome>
         <AnimationContainer
