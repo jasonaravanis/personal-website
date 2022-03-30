@@ -11,6 +11,7 @@ import DarkMode from "./interfaces/DarkMode";
 import screens from "./styles/screens";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
+import WaveBorder from "./components/WaveBorder";
 
 const AppStyles = styled.div<DarkMode>`
   display: flex;
@@ -48,11 +49,13 @@ function App() {
       <ScreenContainer>
         <NavBar />
         <ContentContainer>
+          <WaveBorder />
           <Home />
-          <About />
+          <WaveBorder flip />
+          {/* <About />
           <Skills />
           <Projects />
-          <Contact />
+          <Contact /> */}
         </ContentContainer>
       </ScreenContainer>
     </AppStyles>
