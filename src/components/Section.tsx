@@ -12,6 +12,8 @@ interface Props {
 }
 
 const FullScreenBackGround = styled.section<IBackground>`
+  max-width: 100vw;
+  overflow-x: hidden;
   display: flex;
   justify-content: center;
   background-color: ${(props) =>

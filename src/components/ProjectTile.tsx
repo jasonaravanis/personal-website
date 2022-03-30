@@ -4,12 +4,16 @@ import colours from "../styles/colours";
 import { useTheme } from "../contexts/Theme";
 import DarkMode from "../interfaces/DarkMode";
 import { IProject } from "../interfaces/Project";
+import { motion } from "framer-motion";
 
 interface IProjectTile {
   project: IProject;
   key: string;
   setModal: (project: IProject) => void;
 }
+
+const LoadAnimationContainer = styled(motion.div)``;
+const HoverAnimationContainer = styled(motion.div)``;
 
 const Container = styled.button<DarkMode>`
   display: flex;
@@ -30,26 +34,35 @@ const ProjectLabel = styled.span<DarkMode>`
     props.darkMode ? colours.dark.textBlack : colours.light.textBlack};
 `;
 
+const loadAnimation = {
+  hidden: { scale: 1.1, opacity: 0 },
+  visible: { scale: 1, opacity: 1 },
+};
+
 const ProjectTile: FC<IProjectTile> = ({ project, setModal }) => {
   const darkMode = useTheme();
 
   return (
-    <Container
-      darkMode={darkMode}
-      onClick={() =>
-        setModal({
-          image: project.image,
-          title: project.title,
-          url: project.url,
-          repo: project.repo,
-          description: project.description,
-          builtWith: project.builtWith,
-        })
-      }
-    >
-      <img src={project.image} alt="title" />
-      <ProjectLabel darkMode={darkMode}>{project.title}</ProjectLabel>
-    </Container>
+    <LoadAnimationContainer variants={loadAnimation}>
+      <HoverAnimationContainer whileHover={{ scale: 1.05 }}>
+        <Container
+          darkMode={darkMode}
+          onClick={() =>
+            setModal({
+              image: project.image,
+              title: project.title,
+              url: project.url,
+              repo: project.repo,
+              description: project.description,
+              builtWith: project.builtWith,
+            })
+          }
+        >
+          <img src={project.image} alt="title" />
+          <ProjectLabel darkMode={darkMode}>{project.title}</ProjectLabel>
+        </Container>
+      </HoverAnimationContainer>
+    </LoadAnimationContainer>
   );
 };
 

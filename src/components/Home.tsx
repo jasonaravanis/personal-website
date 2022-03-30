@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import screens from "../styles/screens";
-import professional from "../images/photos/professional.png";
 import colours from "../styles/colours";
 import Section from "./Section";
 import { useTheme } from "../contexts/Theme";
 import DarkMode from "../interfaces/DarkMode";
+import { motion } from "framer-motion";
 
 const StyledHome = styled.section`
   display: flex;
@@ -17,6 +17,8 @@ const StyledHome = styled.section`
     flex-direction: column;
   }
 `;
+
+const AnimationContainer = styled(motion.div)``;
 
 const TitleContainer = styled.div<DarkMode>`
   display: flex;
@@ -67,6 +69,22 @@ const Subtitle = styled.span<DarkMode>`
   }
 `;
 
+const containerVariants = {
+  hidden: {
+    y: "-20vh",
+    opacity: 0,
+  },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      delay: 0.5,
+      type: "spring",
+      stiffness: 100,
+    },
+  },
+};
+
 const Home = () => {
   const darkMode = useTheme();
   return (
@@ -76,11 +94,16 @@ const Home = () => {
       darkBackground={colours.dark.backgroundOne}
     >
       <StyledHome>
-        <TitleContainer darkMode={darkMode}>
-          <PrimaryTitle darkMode={darkMode}>JASON ARAVANIS</PrimaryTitle>
-          <Subtitle darkMode={darkMode}>Full Stack Developer</Subtitle>
-        </TitleContainer>
-        {/* <ProfessionalPhoto src={professional} alt="Professional headshot" /> */}
+        <AnimationContainer
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          <TitleContainer darkMode={darkMode}>
+            <PrimaryTitle darkMode={darkMode}>JASON ARAVANIS</PrimaryTitle>
+            <Subtitle darkMode={darkMode}>Full Stack Developer</Subtitle>
+          </TitleContainer>
+        </AnimationContainer>
       </StyledHome>
     </Section>
   );

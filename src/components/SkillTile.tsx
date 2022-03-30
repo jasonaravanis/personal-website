@@ -5,13 +5,14 @@ import DarkMode from "../interfaces/DarkMode";
 import colours from "../styles/colours";
 import screens from "../styles/screens";
 import { ISkill } from "../interfaces/Skill";
+import { motion } from "framer-motion";
 
 interface IntSkillTile {
   skill: ISkill;
   key: string;
 }
 
-const Container = styled.a``;
+const Container = styled(motion.a)``;
 
 const Tile = styled.div<DarkMode>`
   position: relative;
@@ -79,10 +80,15 @@ const MobileTitle = styled.span<DarkMode>`
   }
 `;
 
+const animation = {
+  hidden: { x: "60vw", opacity: 0, rotate: 90 },
+  visible: { x: 0, opacity: 1, rotate: 0, transition: { duration: 1 } },
+};
+
 const SkillTile: FC<IntSkillTile> = ({ skill }) => {
   const darkMode = useTheme();
   return (
-    <Container href={skill.link} target="_blank">
+    <Container variants={animation} href={skill.link} target="_blank">
       <Tile darkMode={darkMode}>
         <HoverTitle>
           <span>{skill.title}</span>

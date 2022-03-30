@@ -2,6 +2,7 @@ import { useTheme } from "../contexts/Theme";
 import styled from "styled-components";
 import DarkMode from "../interfaces/DarkMode";
 import BurgerToggle from "./BurgerToggle";
+import NavLink from "./NavLink";
 import screens from "../styles/screens";
 import { useState } from "react";
 import DarkModeToggle from "./DarkModeSwitch";
@@ -51,17 +52,6 @@ const LinkWrapper = styled.ul`
   }
 `;
 
-const Link = styled.a`
-  display: flex;
-  margin: 0.5rem;
-  &:hover {
-    /* TODO: Add hover colouration based on light/dark mode */
-  }
-  @media screen and (min-width: ${screens.sm}) {
-    margin: 1rem;
-  }
-`;
-
 export function NavBar() {
   const darkMode = useTheme();
   const [navOpen, setNavOpen] = useState(false);
@@ -79,11 +69,11 @@ export function NavBar() {
 
       <Nav open={navOpen}>
         <LinkWrapper>
-          <Link href="#home">Home</Link>
-          <Link href="#about">About</Link>
-          <Link href="#skills">Skills</Link>
-          <Link href="#projects">Projects</Link>
-          <Link href="#contact">Contact</Link>
+          <NavLink href="#home">Home</NavLink>
+          <NavLink href="#about">About</NavLink>
+          <NavLink href="#skills">Skills</NavLink>
+          <NavLink href="#projects">Projects</NavLink>
+          <NavLink href="#contact">Contact</NavLink>
         </LinkWrapper>
       </Nav>
     </Header>

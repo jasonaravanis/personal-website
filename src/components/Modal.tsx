@@ -9,6 +9,7 @@ import screens from "../styles/screens";
 import BuiltWithTile from "../components/BuiltWithTile";
 import { useTheme } from "../contexts/Theme";
 import DarkMode from "../interfaces/DarkMode";
+import { motion } from "framer-motion";
 
 interface Props {
   content: IProject | null;
@@ -116,7 +117,8 @@ const Link = styled.a<DarkMode>`
   text-align: center;
   &:hover {
     border: 1px solid white;
-    background-color: ${colours.light.highlight};
+    background-color: ${(props) =>
+      props.darkMode ? colours.dark.highlight : colours.light.highlight};
     color: white;
   }
   transition: all 100ms ease-in-out;

@@ -6,6 +6,7 @@ import screens from "../styles/screens";
 import { SectionTitle } from "./SectionTitle";
 import Section from "./Section";
 import headshot from "../images/photos/headshot.jpeg";
+import { motion } from "framer-motion";
 
 const Layout = styled.div`
   display: grid;
@@ -71,46 +72,56 @@ const About = () => {
       lightBackground={colours.light.backgroundTwo}
       darkBackground={colours.dark.backgroundTwo}
     >
-      <SectionTitle>About</SectionTitle>
-      <Layout>
-        <Aside darkMode={darkMode}>
-          <Photo src={headshot} alt="headshot of Jason" />
-          <Quote darkMode={darkMode}>
-            "A career based on creativity, constant learning, and cutting edge
-            technology. The potential to touch the lives of billions. What's not
-            to love?"
-          </Quote>
-        </Aside>
-        <TextContainer darkMode={darkMode}>
-          <Paragraph>
-            Back in early 2020 I had a great job as an economist. So, why did I
-            become a self-taught developer?
-          </Paragraph>
-          <Paragraph>
-            While economic forecasting was interesting, I find deeper value in
-            creating something that solves a real world problem. Whether that's
-            building a website, an API, or a mobile app, I love the ability to
-            connect the dots and create something real. The ability to scale a
-            small app into something that reaches billions of users continually
-            amazes me.
-          </Paragraph>
-          <Paragraph>
-            In my mind, the best parts of web development come from the
-            intersection of cutting edge technology, creative design, and the
-            relentless pursuit of doing things just a little bit more
-            efficiently.
-          </Paragraph>
-          <Paragraph>
-            In many ways, economics and programming aren't so different. It's
-            all about breaking a big problem into small parts, working well in a
-            team, and effective use of resources.
-          </Paragraph>
-          <Paragraph>
-            Check out my projects below, and get in touch if you like what you
-            see!
-          </Paragraph>
-        </TextContainer>
-      </Layout>
+      <motion.div
+        initial={{ opacity: 0, y: 100 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          type: "tween",
+          duration: 1.2,
+          delay: 0.5,
+        }}
+      >
+        <SectionTitle>About</SectionTitle>
+        <Layout>
+          <Aside darkMode={darkMode}>
+            <Photo src={headshot} alt="headshot of Jason" />
+            <Quote darkMode={darkMode}>
+              "A career based on creativity, constant learning, and cutting edge
+              technology. The potential to touch the lives of billions. What's
+              not to love?"
+            </Quote>
+          </Aside>
+          <TextContainer darkMode={darkMode}>
+            <Paragraph>
+              Back in early 2020 I had a great job as an economist. So, why did
+              I become a self-taught developer?
+            </Paragraph>
+            <Paragraph>
+              While economic forecasting was interesting, I find deeper value in
+              creating something that solves a real world problem. Whether
+              that's building a website, an API, or a mobile app, I love the
+              ability to connect the dots and create something real. The ability
+              to scale a small app into something that reaches billions of users
+              continually amazes me.
+            </Paragraph>
+            <Paragraph>
+              In my mind, the best parts of web development come from the
+              intersection of cutting edge technology, creative design, and the
+              relentless pursuit of doing things just a little bit more
+              efficiently.
+            </Paragraph>
+            <Paragraph>
+              In many ways, economics and programming aren't so different. It's
+              all about breaking a big problem into small parts, working well in
+              a team, and effective use of resources.
+            </Paragraph>
+            <Paragraph>
+              Check out my projects below, and get in touch if you like what you
+              see!
+            </Paragraph>
+          </TextContainer>
+        </Layout>
+      </motion.div>
     </Section>
   );
 };
