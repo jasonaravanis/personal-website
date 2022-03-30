@@ -14,6 +14,21 @@ import Section from "./Section";
 import DarkMode from "../interfaces/DarkMode";
 import { useTheme } from "../contexts/Theme";
 
+const Footer = styled.footer`
+  background-color: ${colours.light.one};
+  color: ${colours.light.seven};
+  width: 100vw;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+`;
+
+const CentralContainer = styled.div`
+  padding: 1rem;
+  width: 90vw;
+  max-width: ${screens.lg};
+`;
+
 const ContactGrid = styled.div`
   display: grid;
   gap: 1rem;
@@ -24,53 +39,48 @@ const ContactGrid = styled.div`
   }
 `;
 
-const ResumePrompt = styled.span<DarkMode>`
+const ResumePrompt = styled.span`
   display: block;
   text-align: center;
   margin: 2rem;
   font-size: 3rem;
-  color: ${colours.light.one};
 `;
 
 const Contact = () => {
   const darkMode = useTheme();
   return (
-    <Section
-      id="contact"
-      lightBackground={colours.light.six}
-      darkBackground={colours.light.six}
-    >
-      <SectionTitle color="white">Contact</SectionTitle>
-      <ContactGrid>
-        <ContactBubble
-          link="https://twitter.com/IamJasonA"
-          Icon={<AiOutlineTwitter />}
-          hoverBackgroundColor="#009EF7"
-          hoverIconColor="white"
-        />
-        <ContactBubble
-          link="https://www.linkedin.com/in/jason-aravanis"
-          Icon={<AiOutlineLinkedin />}
-          hoverBackgroundColor="#0072b1"
-          hoverIconColor="white"
-        />
-        <ContactBubble
-          link="https://github.com/Atlas-1510"
-          Icon={<AiOutlineGithub />}
-          hoverBackgroundColor="#171515"
-          hoverIconColor="white"
-        />
-        <ContactBubble
-          link="mailto:j.aravanis@icloud.com"
-          Icon={<AiOutlineMail />}
-          hoverBackgroundColor="#A73946"
-          hoverIconColor="white"
-        />
-      </ContactGrid>
-      <ResumePrompt darkMode={darkMode}>
-        Click here to download my resume!
-      </ResumePrompt>
-    </Section>
+    <Footer id="contact">
+      <CentralContainer>
+        <SectionTitle color="white">Contact</SectionTitle>
+        <ContactGrid>
+          <ContactBubble
+            link="https://twitter.com/IamJasonA"
+            Icon={<AiOutlineTwitter />}
+            hoverBackgroundColor="#009EF7"
+            hoverIconColor="white"
+          />
+          <ContactBubble
+            link="https://www.linkedin.com/in/jason-aravanis"
+            Icon={<AiOutlineLinkedin />}
+            hoverBackgroundColor="#0072b1"
+            hoverIconColor="white"
+          />
+          <ContactBubble
+            link="https://github.com/Atlas-1510"
+            Icon={<AiOutlineGithub />}
+            hoverBackgroundColor="#171515"
+            hoverIconColor="white"
+          />
+          <ContactBubble
+            link="mailto:j.aravanis@icloud.com"
+            Icon={<AiOutlineMail />}
+            hoverBackgroundColor="#A73946"
+            hoverIconColor="white"
+          />
+        </ContactGrid>
+        <ResumePrompt>Click here to download my resume!</ResumePrompt>
+      </CentralContainer>
+    </Footer>
   );
 };
 

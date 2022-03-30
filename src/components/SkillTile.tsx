@@ -18,7 +18,7 @@ const Tile = styled.div<DarkMode>`
   position: relative;
   aspect-ratio: 1 / 1;
   background-color: ${(props) =>
-    props.darkMode ? colours.dark.one : colours.light.one};
+    props.darkMode ? colours.dark.seven : colours.light.seven};
   border-radius: 10px;
   overflow: hidden;
   cursor: pointer;

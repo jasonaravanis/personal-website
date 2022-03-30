@@ -83,11 +83,7 @@ const SkillSectionAnimation = {
 
 const Skills = () => {
   return (
-    <Section
-      id="skills"
-      lightBackground={colours.light.six}
-      darkBackground={colours.dark.six}
-    >
+    <Section id="skills">
       <SectionTitle>Skills</SectionTitle>
       <motion.div
         variants={animation}

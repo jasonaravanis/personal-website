@@ -39,11 +39,7 @@ const Projects = () => {
   const animationMargin = size.width! > parseInt(screens.md) ? 0.8 : 0.2;
 
   return (
-    <Section
-      id="projects"
-      lightBackground={colours.light.six}
-      darkBackground={colours.dark.six}
-    >
+    <Section id="projects">
       <SectionTitle>Projects</SectionTitle>
       <ProjectGrid
         variants={animation}

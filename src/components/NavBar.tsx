@@ -21,8 +21,9 @@ const Header = styled.header<DarkMode>`
   justify-content: space-between;
   flex-direction: column;
   background-color: ${(props) =>
-    props.darkMode ? colours.dark.two : colours.light.two};
-  color: ${colours.light.one};
+    props.darkMode ? colours.dark.one : colours.light.one};
+  color: ${(props) =>
+    props.darkMode ? colours.dark.seven : colours.light.seven};
   @media screen and (min-width: ${screens.sm}) {
     flex-direction: row;
   }
@@ -70,7 +71,6 @@ export function NavBar() {
 
       <Nav open={navOpen}>
         <LinkWrapper>
-          <NavLink href="#home">Home</NavLink>
           <NavLink href="#about">About</NavLink>
           <NavLink href="#skills">Skills</NavLink>
           <NavLink href="#projects">Projects</NavLink>
