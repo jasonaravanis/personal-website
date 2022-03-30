@@ -17,7 +17,7 @@ const FullScreenContainer = styled.section`
 
 const CentralContainer = styled.div`
   position: relative;
-  padding: 2rem;
+  padding: 2rem 0rem 2rem 0rem;
   width: 90vw;
   max-width: ${screens.lg};
 `;

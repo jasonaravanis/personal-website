@@ -9,25 +9,31 @@ import headshot from "../images/photos/headshot.jpeg";
 import { motion } from "framer-motion";
 
 const Layout = styled.div`
-  display: grid;
+  /* display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
   place-items: center;
 
   @media screen and (min-width: ${screens.md}) {
     grid-template-columns: 1fr 1fr;
-  }
+  } */
 `;
 
 const Aside = styled.aside<DarkMode>`
-  /* max-width: 70vw; */
-  display: grid;
-  grid-template-columns: 1fr 2fr;
+  margin: 1rem;
+  aspect-ratio: 5 / 2;
+  width: clamp(330px, 50vw, 500px);
+  display: flex;
+  flex-direction: row;
   background-color: ${(props) =>
     props.darkMode ? colours.dark.seven : colours.light.seven};
   border-radius: 25px;
   overflow: hidden;
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+
+  @media screen and (min-width: ${screens.md}) {
+    float: right;
+  }
 `;
 
 const Photo = styled.img`
@@ -36,9 +42,19 @@ const Photo = styled.img`
 `;
 
 const TextContainer = styled.div<DarkMode>`
-  display: grid;
-  place-items: center;
-  color: ${(props) => (props.darkMode ? colours.dark.one : colours.light.one)};
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: ${(props) =>
+    props.darkMode ? colours.dark.two : colours.light.two};
+  padding: 1rem;
+  border-radius: 25px;
+  color: ${(props) =>
+    props.darkMode ? colours.dark.seven : colours.light.seven};
+
+  @media screen and (min-width: ${screens.md}) {
+    display: block;
+  }
 `;
 
 const Quote = styled.span<DarkMode>`
@@ -47,17 +63,17 @@ const Quote = styled.span<DarkMode>`
   font-style: italic;
   display: grid;
   place-items: center;
-  margin: 1rem;
+  margin: 0.5rem;
   color: ${(props) => (props.darkMode ? colours.dark.one : colours.light.one)};
   text-align: center;
 
-  @media screen and (min-width: ${screens.md}) {
+  @media screen and (min-width: ${screens.lg}) {
     font-size: 1.2rem;
   }
 `;
 
 const Paragraph = styled.p`
-  margin-bottom: 1rem;
+  margin: 0.25rem 0 0.25rem 0;
 `;
 
 const About = () => {
@@ -74,14 +90,6 @@ const About = () => {
     >
       <SectionTitle>About</SectionTitle>
       <Layout>
-        <Aside darkMode={darkMode}>
-          <Photo src={headshot} alt="headshot of Jason" />
-          <Quote darkMode={darkMode}>
-            "A career based on creativity, constant learning, and cutting edge
-            technology. The potential to touch the lives of billions. What's not
-            to love?"
-          </Quote>
-        </Aside>
         <TextContainer darkMode={darkMode}>
           <Paragraph>
             Back in early 2020 I had a great job as an economist. So, why did I
@@ -95,6 +103,14 @@ const About = () => {
             small app into something that reaches billions of users continually
             amazes me.
           </Paragraph>
+          <Aside darkMode={darkMode}>
+            <Photo src={headshot} alt="headshot of Jason" />
+            <Quote darkMode={darkMode}>
+              "A career based on creativity, constant learning, and cutting edge
+              technology. The potential to touch the lives of billions. What's
+              not to love?"
+            </Quote>
+          </Aside>
           <Paragraph>
             In my mind, the best parts of web development come from the
             intersection of cutting edge technology, creative design, and the
