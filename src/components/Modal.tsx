@@ -33,8 +33,8 @@ const ContentContainer = styled.div<DarkMode>`
   flex-direction: column;
   padding: 1rem;
   background: ${(props) =>
-    props.darkMode ? colours.dark.one : colours.light.one};
-  color: ${(props) => (props.darkMode ? colours.dark.six : colours.light.six)};
+    props.darkMode ? colours.dark.seven : colours.light.seven};
+  color: ${(props) => (props.darkMode ? colours.dark.one : colours.light.one)};
   border-radius: 25px;
 `;
 
