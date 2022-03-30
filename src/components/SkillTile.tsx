@@ -70,7 +70,8 @@ const MobileTitle = styled.span<DarkMode>`
   text-align: center;
   font-size: 0.8rem;
   margin-top: 0.5rem;
-  color: ${(props) => (props.darkMode ? colours.dark.one : colours.light.one)};
+  color: ${(props) =>
+    props.darkMode ? colours.dark.seven : colours.light.seven};
 
   @media (pointer: coarse) {
     display: inline-block;

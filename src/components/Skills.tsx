@@ -6,6 +6,16 @@ import skills from "../utils/skills";
 import Section from "./Section";
 import colours from "../styles/colours";
 import { motion } from "framer-motion";
+import { useTheme } from "../contexts/Theme";
+import DarkMode from "../interfaces/DarkMode";
+
+const ContentContainer = styled.div<DarkMode>`
+  background-color: ${(props) =>
+    props.darkMode ? colours.dark.two : colours.light.two};
+  color: ${colours.light.seven};
+  border-radius: 25px;
+  padding: 0.2rem 1rem 1rem 1rem;
+`;
 
 const SkillSection = styled(motion.div)``;
 
@@ -82,6 +92,7 @@ const SkillSectionAnimation = {
 };
 
 const Skills = () => {
+  const darkMode = useTheme();
   return (
     <Section id="skills">
       <SectionTitle>Skills</SectionTitle>
@@ -91,30 +102,32 @@ const Skills = () => {
         whileInView="visible"
         viewport={{ once: true }}
       >
-        <SkillSection variants={SkillSectionAnimation}>
-          <SectionSubTitle>front-end</SectionSubTitle>
-          <SkillGrid>
-            {frontEndSkills.map((skill) => (
-              <SkillTile key={skill.title} skill={skill} />
-            ))}
-          </SkillGrid>
-        </SkillSection>
-        <SkillSection variants={SkillSectionAnimation}>
-          <SectionSubTitle>back-end</SectionSubTitle>
-          <SkillGrid>
-            {backEndSkills.map((skill) => (
-              <SkillTile key={skill.title} skill={skill} />
-            ))}
-          </SkillGrid>
-        </SkillSection>
-        <SkillSection variants={SkillSectionAnimation}>
-          <SectionSubTitle>other</SectionSubTitle>
-          <SkillGrid>
-            {otherSkills.map((skill) => (
-              <SkillTile key={skill.title} skill={skill} />
-            ))}
-          </SkillGrid>
-        </SkillSection>
+        <ContentContainer darkMode={darkMode}>
+          <SkillSection variants={SkillSectionAnimation}>
+            <SectionSubTitle>front-end</SectionSubTitle>
+            <SkillGrid>
+              {frontEndSkills.map((skill) => (
+                <SkillTile key={skill.title} skill={skill} />
+              ))}
+            </SkillGrid>
+          </SkillSection>
+          <SkillSection variants={SkillSectionAnimation}>
+            <SectionSubTitle>back-end</SectionSubTitle>
+            <SkillGrid>
+              {backEndSkills.map((skill) => (
+                <SkillTile key={skill.title} skill={skill} />
+              ))}
+            </SkillGrid>
+          </SkillSection>
+          <SkillSection variants={SkillSectionAnimation}>
+            <SectionSubTitle>other</SectionSubTitle>
+            <SkillGrid>
+              {otherSkills.map((skill) => (
+                <SkillTile key={skill.title} skill={skill} />
+              ))}
+            </SkillGrid>
+          </SkillSection>
+        </ContentContainer>
       </motion.div>
     </Section>
   );

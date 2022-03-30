@@ -1,7 +1,6 @@
 import { FC, ReactNode } from "react";
 import styled from "styled-components";
 import screens from "../styles/screens";
-import { useTheme } from "../contexts/Theme";
 
 interface Props {
   children: ReactNode;
@@ -23,7 +22,6 @@ const CentralContainer = styled.div`
 `;
 
 const Section: FC<Props> = ({ children, id }) => {
-  const darkMode = useTheme();
   return (
     <FullScreenContainer id={id}>
       <CentralContainer>{children}</CentralContainer>
