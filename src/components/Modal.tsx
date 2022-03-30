@@ -1,5 +1,4 @@
 import { FC } from "react";
-import { createPortal } from "react-dom";
 import styled from "styled-components";
 import { IProject } from "../interfaces/Project";
 import { FiX } from "react-icons/fi";
@@ -12,21 +11,14 @@ import DarkMode from "../interfaces/DarkMode";
 import { motion } from "framer-motion";
 
 interface Props {
-  content: IProject | null;
+  content: IProject;
   setContent: (content: IProject | null) => void;
 }
 
-const ContentContainer = styled.div<DarkMode>`
+const AnimationContainer = styled(motion.div)`
   position: fixed;
   max-width: 90vw;
-  display: flex;
-  flex-direction: column;
-  background: ${(props) =>
-    props.darkMode
-      ? colours.dark.backgroundThree
-      : colours.light.backgroundThree};
-  border-radius: 25px;
-  padding: 1rem;
+
   z-index: 10000;
   font-family: "Raleway";
   box-shadow: 0px 0px 13px -5px #7d7d7d;
@@ -34,6 +26,17 @@ const ContentContainer = styled.div<DarkMode>`
   @media screen and (min-width: ${screens.sm}) {
     max-width: 50vw;
   }
+`;
+
+const ContentContainer = styled.div<DarkMode>`
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  background: ${(props) =>
+    props.darkMode
+      ? colours.dark.backgroundThree
+      : colours.light.backgroundThree};
+  border-radius: 25px;
 `;
 
 const Layout = styled.div`
@@ -47,8 +50,10 @@ const Layout = styled.div`
   }
 `;
 
-const Backdrop = styled.div`
+const Backdrop = styled(motion.div)`
   position: fixed;
+  height: 100%;
+  width: 100%;
   display: grid;
   place-items: center;
   top: 0;
@@ -124,66 +129,118 @@ const Link = styled.a<DarkMode>`
   transition: all 100ms ease-in-out;
 `;
 
+const backDropAnimation = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+  },
+  exit: {
+    opacity: 0,
+  },
+};
+
+const dropInAnimation = {
+  hidden: {
+    y: "-50vh",
+    opacity: 0,
+  },
+  visible: {
+    y: "0",
+    opacity: 1,
+    transition: {
+      duration: 0.1,
+      type: "spring",
+      damping: 25,
+      stiffness: 500,
+    },
+  },
+  exit: {
+    y: "50vh",
+    opacity: 0,
+    transition: {
+      duration: 0.1,
+      type: "spring",
+      damping: 25,
+      stiffness: 500,
+    },
+  },
+};
+
 const Modal: FC<Props> = ({ content, setContent }) => {
   const darkMode = useTheme();
   // overflow styles applied to body to prevent scrolling of main content while modal is open.
-  if (!content) {
-    document.body.style.overflow = "auto";
-    return null;
-  } else {
-    document.body.style.overflow = "hidden";
-  }
+  document.body.style.overflow = "hidden";
 
   const closeModal = () => {
+    document.body.style.overflow = "auto";
     setContent(null);
   };
 
-  return createPortal(
-    <Backdrop onClick={closeModal}>
-      <ContentContainer darkMode={darkMode}>
-        <ExitButton onClick={closeModal}>
-          <IconContext.Provider
-            value={{
-              size: "2rem",
-              color: darkMode
-                ? colours.dark.highlight
-                : colours.light.highlight,
-            }}
-          >
-            <FiX />
-          </IconContext.Provider>
-        </ExitButton>
-        <Layout>
-          <ProjectInfoContainer>
-            <ProjectTitle>{content.title}</ProjectTitle>
-            <ProjectDescription>{content.description}</ProjectDescription>
-            <BuiltWithTitle>Built With:</BuiltWithTitle>
-            <BuiltWithGrid>
-              {content.builtWith.map((tool) => (
-                <BuiltWithTile
-                  key={tool.title}
-                  link={tool.link}
-                  img={tool.image}
-                  title={tool.title}
-                />
-              ))}
-            </BuiltWithGrid>
-          </ProjectInfoContainer>
-          <ImageAndButtonsContainer>
-            <img src={content.image} alt={content.title} />
-            <LinksContainer>
-              <Link darkMode={darkMode} href={content.url} target="_blank">
-                Live Preview
-              </Link>
-              <Link darkMode={darkMode} href={content.repo} target="_blank">
-                View Code
-              </Link>
-            </LinksContainer>
-          </ImageAndButtonsContainer>
-        </Layout>
-      </ContentContainer>
-    </Backdrop>,
-    document.getElementById("modalPortal")!
+  return (
+    <Backdrop
+      onClick={closeModal}
+      variants={backDropAnimation}
+      initial="hidden"
+      animate="visible"
+      exit="exit"
+      key="backdrop"
+    >
+      <AnimationContainer
+        variants={dropInAnimation}
+        initial="hidden"
+        animate="visible"
+        exit="exit"
+        key="modal"
+      >
+        <ContentContainer
+          darkMode={darkMode}
+          onClick={(e) => e.stopPropagation()}
+        >
+          <ExitButton onClick={closeModal}>
+            <IconContext.Provider
+              value={{
+                size: "2rem",
+                color: darkMode
+                  ? colours.dark.highlight
+                  : colours.light.highlight,
+              }}
+            >
+              <FiX />
+            </IconContext.Provider>
+          </ExitButton>
+          <Layout>
+            <ProjectInfoContainer>
+              <ProjectTitle>{content.title}</ProjectTitle>
+              <ProjectDescription>{content.description}</ProjectDescription>
+              <BuiltWithTitle>Built With:</BuiltWithTitle>
+              <BuiltWithGrid>
+                {content.builtWith.map((tool) => (
+                  <BuiltWithTile
+                    key={tool.title}
+                    link={tool.link}
+                    img={tool.image}
+                    title={tool.title}
+                  />
+                ))}
+              </BuiltWithGrid>
+            </ProjectInfoContainer>
+            <ImageAndButtonsContainer>
+              <img src={content.image} alt={content.title} />
+              <LinksContainer>
+                <Link darkMode={darkMode} href={content.url} target="_blank">
+                  Live Preview
+                </Link>
+                <Link darkMode={darkMode} href={content.repo} target="_blank">
+                  View Code
+                </Link>
+              </LinksContainer>
+            </ImageAndButtonsContainer>
+          </Layout>
+        </ContentContainer>
+      </AnimationContainer>
+    </Backdrop>
   );
 };
 

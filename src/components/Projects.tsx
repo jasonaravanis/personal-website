@@ -7,7 +7,7 @@ import { IProject } from "../interfaces/Project";
 import projects from "../utils/projects";
 import Section from "./Section";
 import colours from "../styles/colours";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { IWindowSize } from "../interfaces/WindowSize";
 import useWindowSize from "../hooks/useWindowSize";
 import screens from "../styles/screens";
@@ -62,7 +62,11 @@ const Projects = () => {
           />
         ))}
       </ProjectGrid>
-      <Modal content={modalContent} setContent={setModalContent} />
+      <AnimatePresence>
+        {modalContent && (
+          <Modal content={modalContent} setContent={setModalContent} />
+        )}
+      </AnimatePresence>
     </Section>
   );
 };
