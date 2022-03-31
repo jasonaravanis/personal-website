@@ -36,8 +36,11 @@ const TitleContainer = styled.div<DarkMode>`
 const Blob = styled.svg`
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
+  left: 50%;
+  transform: translateX(-55%) translateY(-45%);
+  width: 100%;
   aspect-ratio: 3 / 2;
+  overflow: visible;
 `;
 
 const PrimaryTitle = styled.span<DarkMode>`
@@ -107,7 +110,7 @@ const Home = () => {
           <TitleContainer darkMode={darkMode}>
             <Blob
               id="visual"
-              viewBox="0 0 550 600"
+              viewBox="0 0 500 600"
               xmlns="http://www.w3.org/2000/svg"
               version="1.1"
               preserveAspectRatio="none"
