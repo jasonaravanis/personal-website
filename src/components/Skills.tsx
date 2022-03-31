@@ -12,7 +12,8 @@ import DarkMode from "../interfaces/DarkMode";
 const ContentContainer = styled.div<DarkMode>`
   background-color: ${(props) =>
     props.darkMode ? colours.dark.two : colours.light.two};
-  color: ${colours.light.seven};
+  color: ${(props) =>
+    props.darkMode ? colours.dark.seven : colours.light.seven};
   border-radius: 25px;
   padding: 0.2rem 1rem 1rem 1rem;
 `;

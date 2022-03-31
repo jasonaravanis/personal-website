@@ -11,7 +11,6 @@ import screens from "./styles/screens";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import WaveBorder from "./components/WaveBorder";
-import WaveBorderThin from "./components/WaveBorderTHIN";
 
 const AppStyles = styled.div<DarkMode>`
   display: flex;
@@ -46,13 +45,13 @@ function App() {
           <WaveBorder>
             <About />
           </WaveBorder>
-          <WaveBorderThin>
+          <WaveBorder>
             <Skills />
-          </WaveBorderThin>
+          </WaveBorder>
 
-          <WaveBorderThin>
+          <WaveBorder>
             <Projects />
-          </WaveBorderThin>
+          </WaveBorder>
           <Contact />
         </ContentContainer>
       </ScreenContainer>

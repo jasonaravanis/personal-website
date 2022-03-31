@@ -1,12 +1,12 @@
 const colours = {
   dark: {
-    one: "#202731", // black
+    one: "#95003c", // black
     two: "#373860",
     three: "#733C81",
     four: "#BD2B84",
-    five: "#FF0066",
+    five: "#202731",
     six: "#BB004B",
-    seven: "#F5F5F5", // white
+    seven: "#999999", // white
   },
   light: {
     one: "#202731", // black

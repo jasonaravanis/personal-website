@@ -14,8 +14,9 @@ import Section from "./Section";
 import DarkMode from "../interfaces/DarkMode";
 import { useTheme } from "../contexts/Theme";
 
-const Footer = styled.footer`
-  background-color: ${colours.light.one};
+const Footer = styled.footer<DarkMode>`
+  background-color: ${(props) =>
+    props.darkMode ? colours.dark.one : colours.light.one};
   color: ${colours.light.seven};
   width: 100vw;
   overflow-x: hidden;
@@ -49,7 +50,7 @@ const ResumePrompt = styled.span`
 const Contact = () => {
   const darkMode = useTheme();
   return (
-    <Footer id="contact">
+    <Footer darkMode={darkMode} id="contact">
       <CentralContainer>
         <SectionTitle color="white">Contact</SectionTitle>
         <ContactGrid>
