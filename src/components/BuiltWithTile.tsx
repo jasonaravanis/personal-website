@@ -1,8 +1,5 @@
 import { FC } from "react";
 import styled from "styled-components";
-import { useTheme } from "../contexts/Theme";
-import DarkMode from "../interfaces/DarkMode";
-import colours from "../styles/colours";
 import screens from "../styles/screens";
 
 interface IntBuiltWithTile {
@@ -41,7 +38,6 @@ const Image = styled.img`
 `;
 
 const BuiltWithTile: FC<IntBuiltWithTile> = ({ img, title, link }) => {
-  const darkMode = useTheme();
   return (
     <Container href={link} target="_blank">
       <Tile>

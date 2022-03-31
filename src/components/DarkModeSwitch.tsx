@@ -1,6 +1,5 @@
 import { useThemeUpdate, useTheme } from "../contexts/Theme";
 import styled from "styled-components";
-import colours from "../styles/colours";
 import { ChangeEvent } from "react";
 
 interface StyledLabelInterface {

@@ -6,7 +6,6 @@ import { useState } from "react";
 import { IProject } from "../interfaces/Project";
 import projects from "../utils/projects";
 import Section from "./Section";
-import colours from "../styles/colours";
 import { motion, AnimatePresence } from "framer-motion";
 import { IWindowSize } from "../interfaces/WindowSize";
 import useWindowSize from "../hooks/useWindowSize";

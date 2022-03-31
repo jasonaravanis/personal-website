@@ -4,7 +4,6 @@ import DarkMode from "../interfaces/DarkMode";
 import { useTheme } from "../contexts/Theme";
 import screens from "../styles/screens";
 import { SectionTitle } from "./SectionTitle";
-import Section from "./Section";
 import headshot from "../images/photos/headshot.jpeg";
 import { motion } from "framer-motion";
 

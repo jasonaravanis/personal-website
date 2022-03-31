@@ -6,7 +6,7 @@ const colours = {
     four: "#BD2B84",
     five: "#202731",
     six: "#BB004B",
-    seven: "#B8B8B8", // white
+    seven: "#E0E0E0", // white
   },
   light: {
     one: "#202731", // black

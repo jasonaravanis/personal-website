@@ -1,7 +1,6 @@
 import { FC, ReactNode } from "react";
 import styled from "styled-components";
 import { IconContext } from "react-icons";
-import colours from "../styles/colours";
 import screens from "../styles/screens";
 
 interface Props {

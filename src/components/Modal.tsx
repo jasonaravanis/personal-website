@@ -102,8 +102,6 @@ const ImageAndButtonsContainer = styled.div`
   margin: 1rem 0 1rem 0;
 `;
 
-const Image = styled.img``;
-
 const LinksContainer = styled.div`
   display: flex;
   justify-content: center;

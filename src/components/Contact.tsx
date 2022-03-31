@@ -10,7 +10,6 @@ import {
 import ContactBubble from "./ContactBubble";
 import screens from "../styles/screens";
 import colours from "../styles/colours";
-import Section from "./Section";
 import DarkMode from "../interfaces/DarkMode";
 import { useTheme } from "../contexts/Theme";
 
@@ -55,7 +54,7 @@ const Contact = () => {
         <SectionTitle color="white">Contact</SectionTitle>
         <ContactGrid>
           <ContactBubble
-            link="https://twitter.com/IamJasonA"
+            link="https://twitter.com/JasonAravanis"
             Icon={<AiOutlineTwitter />}
             hoverBackgroundColor="#009EF7"
             hoverIconColor="white"
