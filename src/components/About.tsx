@@ -29,15 +29,14 @@ const TitleContainer = styled.div<DarkMode>`
   border-radius: 25px;
   margin: 2rem 0 2rem 0;
   padding: 2rem;
-  /* background-color: ${(props) =>
-    props.darkMode ? colours.dark.six : colours.light.six}; */
   line-height: 1;
+  text-align: center;
 `;
 
 const Blob = styled.svg`
   position: absolute;
-  top: -70px;
-  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
   aspect-ratio: 3 / 2;
 `;
 
@@ -56,7 +55,6 @@ const PrimaryTitle = styled.span<DarkMode>`
   }
 
   @media screen and (min-width: ${screens.lg}) {
-    align-items: flex-start;
     font-size: 8rem;
   }
 `;
