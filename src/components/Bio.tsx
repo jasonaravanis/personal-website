@@ -90,17 +90,13 @@ const About = () => {
       <SectionTitle>About</SectionTitle>
       <Layout>
         <TextContainer darkMode={darkMode}>
+          <Paragraph>Why did I become a self-taught developer?</Paragraph>
           <Paragraph>
-            Back in early 2020 I had a great job as an economist. So, why did I
-            become a self-taught developer?
-          </Paragraph>
-          <Paragraph>
-            While economic forecasting was interesting, I find deeper value in
-            creating something that solves a real world problem. Whether that's
-            building a website, an API, or a mobile app, I love the ability to
-            connect the dots and create something real. The ability to scale a
-            small app into something that reaches billions of users continually
-            amazes me.
+            I find value in creating something that solves a real world problem.
+            Whether that's building a website, an API, or a mobile app, I love
+            the ability to connect the dots and turn an idea into something
+            real. I continue to be amazed by the ability to reach billions of
+            people with the power of the web.
           </Paragraph>
           <Aside darkMode={darkMode}>
             <Photo src={headshot} alt="headshot of Jason" />
@@ -117,9 +113,9 @@ const About = () => {
             efficiently.
           </Paragraph>
           <Paragraph>
-            In many ways, economics and programming aren't so different. It's
-            all about breaking a big problem into small parts, working well in a
-            team, and effective use of resources.
+            In a past life I was an economist, and web development isn't so
+            different. It's all about breaking big problems into small parts,
+            working well with your team, and using resources efficiently.
           </Paragraph>
           <Paragraph>
             Check out my projects below, and get in touch if you like what you
