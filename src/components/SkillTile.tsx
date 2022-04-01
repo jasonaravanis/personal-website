@@ -56,10 +56,17 @@ const HoverTitle = styled.span`
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   transition: opacity 100ms ease-in-out;
-
   opacity: 0;
   &:hover {
     opacity: 1;
+  }
+
+  // backdrop-filter is not supported by default in firefox. To make hover text look good
+  // need to add firefox-specific styles below.
+  @-moz-document url-prefix() {
+    &:hover {
+      background: rgba(255, 255, 255, 0.8);
+    }
   }
 `;
 
