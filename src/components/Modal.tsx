@@ -16,7 +16,6 @@ interface Props {
 }
 
 const AnimationContainer = styled(motion.div)`
-  position: fixed;
   max-width: 90vw;
 
   z-index: 10000;
@@ -51,8 +50,8 @@ const Layout = styled.div`
 
 const Backdrop = styled(motion.div)`
   position: fixed;
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
   display: grid;
   place-items: center;
   top: 0;
