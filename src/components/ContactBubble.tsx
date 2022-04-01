@@ -19,7 +19,8 @@ const Container = styled.a<IHoverColor>`
   display: grid;
   place-items: center;
   background-color: white;
-  aspect-ratio: 1 / 1;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
   padding: 0.5rem;
   color: black;
