@@ -94,6 +94,11 @@ const BuiltWithGrid = styled.div`
   }
 `;
 
+const Image = styled.img`
+  width: 100%;
+  height: auto;
+`;
+
 const ImageAndButtonsContainer = styled.div`
   min-width: 50%;
   display: flex;
@@ -219,7 +224,7 @@ const Modal: FC<Props> = ({ content, setContent }) => {
               </BuiltWithGrid>
             </ProjectInfoContainer>
             <ImageAndButtonsContainer>
-              <img src={content.image} alt={content.title} />
+              <Image src={content.image} alt={content.title} />
               <LinksContainer>
                 <Link darkMode={darkMode} href={content.url} target="_blank">
                   Live Preview
