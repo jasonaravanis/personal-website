@@ -23,6 +23,7 @@ const Container = styled.button<DarkMode>`
     props.darkMode ? colours.dark.seven : colours.light.seven};
   padding: 1rem 1rem 0.5rem 1rem;
   border-radius: 25px;
+  border: none;
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 `;
 

@@ -65,6 +65,7 @@ const Backdrop = styled(motion.div)`
 const ExitButton = styled.button`
   align-self: flex-end;
   margin-bottom: 0.5rem;
+  border: none;
 `;
 
 const ProjectInfoContainer = styled.div`
